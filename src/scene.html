@@ -1,0 +1,737 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<title>HorCare Ad</title>
+<script src="timeline.js"></script>
+<style>
+@font-face { font-family: Prompt; src: url(../assets/fonts/Prompt-Regular.ttf); font-weight: 400; }
+@font-face { font-family: Prompt; src: url(../assets/fonts/Prompt-SemiBold.ttf); font-weight: 600; }
+@font-face { font-family: Prompt; src: url(../assets/fonts/Prompt-ExtraBold.ttf); font-weight: 800; }
+
+:root {
+  --teal: #0B8A83; --teal-2: #13B5A9; --teal-dark: #05504B; --ink: #0B3B39;
+  --mint: #EAF8F6; --orange: #FF8A3D; --yellow: #FFD166; --red: #FF5A5F; --green: #22C55E;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1080px; height: 1920px; overflow: hidden; background: #000; }
+#stage { position: relative; width: 1080px; height: 1920px; overflow: hidden;
+  font-family: Prompt, "Noto Color Emoji", sans-serif; color: #fff; }
+.scene { position: absolute; inset: 0; display: none; overflow: hidden; }
+.abs { position: absolute; }
+.full { position: absolute; inset: 0; }
+.center { position: absolute; left: 0; width: 100%; text-align: center; }
+.inl { display: inline-block; }
+.emoji { font-family: "Noto Color Emoji", sans-serif; }
+
+/* ---------- Scene 1: hook ---------- */
+#s1 { background: radial-gradient(circle at 50% 42%, #24343c 0%, #0b1013 72%); }
+.paper { position: absolute; left: 0; top: 0; width: 170px; height: 225px; border-radius: 10px;
+  background: #f5f1e8; box-shadow: 0 18px 40px rgba(0,0,0,.45); padding: 18px 16px; color: #8a8270; }
+.paper b { display: block; font-size: 20px; font-weight: 600; color: #6b6352; margin-bottom: 10px; }
+.paper i { display: block; height: 8px; border-radius: 4px; background: #ddd5c4; margin: 11px 0; }
+.paper i:nth-child(3) { width: 70%; } .paper i:nth-child(5) { width: 55%; }
+.paper u { position: absolute; right: 14px; bottom: 16px; font-size: 26px; font-weight: 800; color: #d0573c;
+  text-decoration: none; transform: rotate(-12deg); border: 3px solid #d0573c; border-radius: 8px; padding: 0 8px; }
+#s1k { top: 620px; font-size: 46px; font-weight: 600; color: var(--yellow); letter-spacing: 1px; }
+#s1a { top: 720px; font-size: 118px; font-weight: 800; line-height: 1.25; text-shadow: 0 10px 40px rgba(0,0,0,.6); }
+#s1b { top: 880px; font-size: 118px; font-weight: 800; line-height: 1.25; text-shadow: 0 10px 40px rgba(0,0,0,.6); }
+#s1mark { padding: 0 24px; border-radius: 26px; --w: 0%;
+  background: linear-gradient(var(--red), var(--red)) no-repeat left center / var(--w) 100%; }
+#s1sub { top: 1090px; font-size: 44px; color: #b9c6cb; }
+
+/* ---------- Scene 2: pain ---------- */
+#s2 { background: radial-gradient(circle at 50% 35%, #3d1c23 0%, #140a0d 75%); }
+#s2vig { background: radial-gradient(circle at 50% 50%, transparent 45%, rgba(255,40,60,.35) 100%); }
+#s2t { top: 250px; font-size: 70px; font-weight: 800; line-height: 1.3; }
+#s2t span { color: var(--red); }
+.card { position: absolute; left: 80px; width: 920px; height: 172px; border-radius: 40px; background: #fff;
+  color: #1d1d1f; display: flex; align-items: center; padding: 0 36px; gap: 30px;
+  box-shadow: 0 24px 60px rgba(0,0,0,.45); }
+.card .ic { width: 112px; height: 112px; border-radius: 30px; background: #FFE6E6; display: flex;
+  align-items: center; justify-content: center; font-size: 62px; flex: none; }
+.card .tx { font-size: 50px; font-weight: 600; flex: 1; white-space: nowrap; }
+.card .x { width: 74px; height: 74px; border-radius: 50%; background: var(--red); color: #fff; font-size: 44px;
+  font-weight: 800; display: flex; align-items: center; justify-content: center; flex: none; }
+.badge { position: absolute; left: 100px; top: 18px; min-width: 64px; height: 50px; padding: 0 12px; border-radius: 25px;
+  background: var(--red); color: #fff; font-size: 30px; font-weight: 800; display: flex; align-items: center;
+  justify-content: center; border: 4px solid #fff; }
+#s2tired { top: 1450px; font-size: 140px; font-weight: 800; color: #fff; text-shadow: 0 0 60px rgba(255,90,95,.8); }
+
+/* ---------- Scene 3: reveal ---------- */
+#s3 { background: radial-gradient(circle at 50% 42%, #19c3b6 0%, #0B8A83 55%, #05504B 100%); }
+#rays { position: absolute; left: -760px; top: -340px; width: 2600px; height: 2600px; opacity: .13;
+  background: repeating-conic-gradient(from 0deg, #fff 0deg 6deg, transparent 6deg 18deg); border-radius: 50%; }
+#logo { left: 375px; top: 520px; width: 330px; height: 330px; border-radius: 90px; background: #fff;
+  box-shadow: 0 30px 80px rgba(0,0,0,.3); display: flex; align-items: center; justify-content: center; }
+#logo svg { width: 230px; height: 230px; }
+#ring { left: 340px; top: 485px; width: 400px; height: 400px; border-radius: 50%; border: 10px solid #fff; }
+.spark { position: absolute; left: 525px; top: 670px; width: 30px; height: 30px; }
+#word { top: 900px; font-size: 168px; font-weight: 800; letter-spacing: -2px; line-height: 1.2; }
+#word .c { color: var(--yellow); }
+#thai { top: 1120px; }
+#thai .pill { display: inline-block; font-size: 64px; font-weight: 600; padding: 4px 48px; border-radius: 60px;
+  background: rgba(255,255,255,.16); border: 3px solid rgba(255,255,255,.35); }
+#tag { top: 1290px; font-size: 54px; }
+#tag2 { top: 1370px; font-size: 84px; font-weight: 800; color: var(--yellow); }
+#tag2 .inl { margin: 0 12px; }
+
+/* ---------- Scene 4: features ---------- */
+#s4 { background: linear-gradient(180deg, #EFFAF8 0%, #D2F0EA 100%); color: var(--ink); }
+.blob { position: absolute; border-radius: 50%; filter: blur(60px); }
+#hdr { top: 70px; display: flex; justify-content: center; align-items: center; gap: 18px;
+  font-size: 46px; font-weight: 800; color: var(--teal); }
+#hdr .mini { width: 74px; height: 74px; border-radius: 22px; background: #fff; display: flex; align-items: center;
+  justify-content: center; box-shadow: 0 8px 20px rgba(11,138,131,.18); }
+#hdr .mini svg { width: 54px; height: 54px; }
+.ftitle { position: absolute; left: 0; top: 190px; width: 100%; text-align: center; }
+.ftitle .chip { display: inline-block; font-size: 32px; font-weight: 600; color: #fff; background: var(--teal);
+  padding: 2px 26px; border-radius: 30px; }
+.ftitle h2 { font-size: 80px; font-weight: 800; line-height: 1.25; margin-top: 10px; }
+.ftitle p { font-size: 42px; color: #3d6966; }
+#phone { left: 245px; top: 500px; width: 590px; height: 1220px; border-radius: 86px; background: #0f1416;
+  padding: 16px; box-shadow: 0 50px 100px rgba(5,80,75,.35), inset 0 0 0 3px #2a3438; }
+#screen { position: relative; width: 100%; height: 100%; border-radius: 70px; background: #F4F7F8; overflow: hidden; }
+#notch { position: absolute; left: 50%; top: 14px; width: 150px; height: 38px; margin-left: -75px; border-radius: 20px;
+  background: #0f1416; z-index: 5; }
+#sbar { position: absolute; left: 0; top: 0; width: 100%; height: 66px; padding: 18px 44px 0; display: flex;
+  justify-content: space-between; font-size: 24px; font-weight: 600; color: #fff; z-index: 4; }
+#strip { position: absolute; left: 0; top: 0; height: 100%; width: 2790px; display: flex; }
+.panel { position: relative; width: 558px; height: 100%; flex: none; }
+.appbar { height: 170px; background: linear-gradient(135deg, var(--teal-2), var(--teal)); color: #fff;
+  padding: 78px 34px 0; font-size: 36px; font-weight: 800; }
+.appbar small { display: block; font-size: 22px; font-weight: 400; opacity: .85; margin-top: -4px; }
+.pc { position: absolute; left: 26px; right: 26px; top: 196px; }
+.box { background: #fff; border-radius: 28px; box-shadow: 0 6px 18px rgba(0,40,40,.07); }
+.row { position: relative; height: 100px; display: flex; align-items: center; padding: 0 24px; margin-bottom: 14px; }
+.row .rn { font-size: 30px; font-weight: 600; color: #123; }
+.row .rs { font-size: 20px; color: #7b8b8b; }
+.row .amt { margin-left: auto; font-size: 30px; font-weight: 800; color: var(--ink); }
+.ck { width: 46px; height: 46px; border-radius: 50%; background: var(--green); color: #fff; font-size: 28px;
+  font-weight: 800; display: flex; align-items: center; justify-content: center; margin-left: 16px; }
+.btn { height: 96px; border-radius: 48px; background: var(--orange); color: #fff; font-size: 34px; font-weight: 800;
+  display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;
+  box-shadow: 0 10px 24px rgba(255,138,61,.4); }
+.ripple { position: absolute; width: 120px; height: 120px; border-radius: 50%; background: rgba(255,255,255,.55);
+  left: 50%; top: 50%; margin: -60px 0 0 -60px; }
+.chipst { position: absolute; right: 22px; top: 27px; height: 46px; padding: 0 18px; border-radius: 23px; font-size: 22px;
+  font-weight: 600; display: flex; align-items: center; white-space: nowrap; }
+.pend { background: #FFF0E3; color: #E06A1B; }
+.paid { background: #DDF8E6; color: #138A44; }
+.toast { position: relative; height: 92px; display: flex; align-items: center; gap: 16px; padding: 0 22px;
+  margin-bottom: 14px; font-size: 25px; font-weight: 600; color: #234; }
+.toast .ti { width: 56px; height: 56px; border-radius: 16px; background: #E3F6F4; display: flex; align-items: center;
+  justify-content: center; font-size: 30px; }
+.bar { height: 22px; border-radius: 11px; background: #E2ECEB; overflow: hidden; }
+.bar i { display: block; height: 100%; background: linear-gradient(90deg, var(--teal-2), var(--teal)); border-radius: 11px; }
+.step { display: flex; align-items: flex-start; justify-content: space-between; position: relative; margin: 30px 10px 0; }
+.step .dot { width: 64px; height: 64px; border-radius: 50%; background: #E2ECEB; color: #fff; display: flex;
+  align-items: center; justify-content: center; font-size: 30px; font-weight: 800; position: relative; z-index: 2; }
+.step .col { width: 120px; display: flex; flex-direction: column; align-items: center; gap: 10px; font-size: 22px;
+  font-weight: 600; color: #4b6563; }
+.step .ln { position: absolute; top: 28px; height: 8px; background: #E2ECEB; border-radius: 4px; overflow: hidden; }
+.step .ln i { display: block; height: 100%; width: 0; background: var(--green); }
+.bars { display: flex; align-items: flex-end; gap: 18px; height: 230px; padding: 0 10px; }
+.bars div { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; height: 100%; gap: 8px; }
+.bars b { display: block; width: 100%; border-radius: 12px 12px 6px 6px; background: linear-gradient(180deg, var(--teal-2), var(--teal)); transform-origin: bottom; }
+.bars span { font-size: 20px; color: #7b8b8b; }
+#dots { top: 1772px; display: flex; justify-content: center; gap: 14px; }
+#dots i { display: block; height: 20px; border-radius: 10px; background: var(--teal); }
+
+/* ---------- Scene 5: benefit ---------- */
+#s5 { background: radial-gradient(circle at 50% 45%, #13B5A9 0%, #0B8A83 60%, #066660 100%); }
+#b1 { top: 690px; font-size: 76px; font-weight: 600; }
+#b1 .w { position: relative; display: inline-block; }
+#strike { position: absolute; left: -12px; top: 52%; height: 14px; border-radius: 7px; background: var(--red); width: 0; }
+#b2 { top: 810px; font-size: 128px; font-weight: 800; color: var(--yellow); text-shadow: 0 12px 40px rgba(0,0,0,.25); }
+#b3 { top: 1040px; font-size: 56px; }
+.clk { position: absolute; width: 140px; height: 140px; margin: -70px 0 0 -70px; border-radius: 50%; border: 8px solid #fff; }
+#cursor { left: 0; top: 0; width: 84px; height: 84px; }
+
+/* ---------- Scene 6: CTA ---------- */
+#s6 { background: linear-gradient(170deg, #12A79D 0%, #087069 55%, #04403C 100%); }
+.bub-bg { position: absolute; border-radius: 40px; background: rgba(255,255,255,.07); }
+#c1 { top: 140px; font-size: 62px; font-weight: 600; }
+#c2 { top: 225px; font-size: 136px; font-weight: 800; color: var(--yellow); text-shadow: 0 14px 40px rgba(0,0,0,.25); }
+#chat { left: 100px; top: 450px; width: 880px; height: 760px; border-radius: 52px; background: #fff; color: #123;
+  box-shadow: 0 40px 90px rgba(0,0,0,.35); overflow: hidden; }
+#chat .hd { height: 124px; display: flex; align-items: center; gap: 22px; padding: 0 34px; border-bottom: 2px solid #EEF2F2; }
+#chat .av { width: 80px; height: 80px; border-radius: 50%; background: var(--mint); display: flex; align-items: center; justify-content: center; }
+#chat .av svg { width: 56px; height: 56px; }
+#chat .nm { font-size: 34px; font-weight: 800; color: var(--ink); line-height: 1.2; }
+#chat .on { font-size: 22px; color: #15a34a; font-weight: 600; }
+#chat .body { position: absolute; left: 0; top: 124px; right: 0; bottom: 110px; }
+.msg { position: absolute; max-width: 640px; font-size: 36px; line-height: 1.4; padding: 20px 30px; border-radius: 34px; }
+.msg.in { left: 30px; background: #EEF3F3; border-bottom-left-radius: 10px; transform-origin: 0 100%; }
+.msg.out { right: 30px; background: var(--teal); color: #fff; border-bottom-right-radius: 10px; transform-origin: 100% 100%; }
+.typing { position: absolute; left: 30px; height: 70px; width: 130px; border-radius: 35px; background: #EEF3F3;
+  display: flex; align-items: center; justify-content: center; gap: 12px; transform-origin: 0 100%; }
+.typing i { width: 16px; height: 16px; border-radius: 50%; background: #8aa3a1; display: block; }
+#inbar { position: absolute; left: 24px; right: 24px; bottom: 22px; height: 70px; display: flex; gap: 16px; align-items: center; }
+#inbar .fld { flex: 1; height: 70px; border-radius: 35px; background: #F1F5F5; font-size: 28px; color: #233;
+  display: flex; align-items: center; padding: 0 28px; white-space: nowrap; overflow: hidden; }
+#inbar .fld.ph { color: #9bb0ae; }
+#inbar .snd { width: 70px; height: 70px; border-radius: 50%; background: var(--teal); color: #fff; font-size: 30px;
+  display: flex; align-items: center; justify-content: center; }
+#cta { left: 110px; top: 1290px; width: 860px; height: 176px; border-radius: 88px;
+  background: linear-gradient(180deg, #FFA14F 0%, #FF7A2F 100%); display: flex; align-items: center; justify-content: center;
+  gap: 22px; font-size: 66px; font-weight: 800; color: #fff; box-shadow: 0 22px 50px rgba(255,122,47,.55), inset 0 -6px 0 rgba(0,0,0,.12); }
+#cta .emoji { font-size: 70px; }
+#ctaRing { left: 110px; top: 1290px; width: 860px; height: 176px; border-radius: 88px; border: 6px solid #FFD166; }
+#hand { left: 0; top: 0; font-size: 150px; line-height: 1; }
+#tapr { width: 160px; height: 160px; margin: -80px 0 0 -80px; border-radius: 50%; background: rgba(255,255,255,.6); }
+#hint { top: 1520px; font-size: 46px; font-weight: 600; }
+#hint b { color: var(--yellow); }
+#arrows { left: 490px; top: 1600px; width: 100px; }
+#arrows svg { display: block; width: 100px; height: 50px; margin-top: -8px; }
+#foot { top: 1760px; display: flex; justify-content: center; align-items: center; gap: 16px; font-size: 34px; }
+#foot .mini { width: 60px; height: 60px; border-radius: 18px; background: #fff; display: flex; align-items: center; justify-content: center; }
+#foot .mini svg { width: 44px; height: 44px; }
+#foot b { font-weight: 800; }
+
+#flash { position: absolute; inset: 0; background: #fff; opacity: 0; pointer-events: none; z-index: 50; }
+</style>
+</head>
+<body>
+<div id="stage">
+
+  <!-- ============ 1. HOOK ============ -->
+  <div class="scene" id="s1">
+    <div class="full" id="papers"></div>
+    <div class="full" id="s1txt">
+      <div class="center" id="s1k">เจ้าของหอพัก · อพาร์ตเมนต์</div>
+      <div class="center" id="s1a">ยังทำบิลค่าเช่า</div>
+      <div class="center" id="s1b"><span id="s1mark">ด้วยมือ</span> อยู่ไหม?</div>
+      <div class="center" id="s1sub">จดมิเตอร์ · คิดเงิน · ทวงค่าเช่า... ทุกเดือน</div>
+    </div>
+  </div>
+
+  <!-- ============ 2. PAIN ============ -->
+  <div class="scene" id="s2">
+    <div class="full" id="s2vig"></div>
+    <div class="full" id="s2in">
+      <div class="center" id="s2t">ปัญหาที่เจ้าของหอ<br><span>เจอซ้ำทุกเดือน</span></div>
+      <div class="card" style="top:560px"><div class="ic emoji">📝</div><div class="tx">จดมิเตอร์น้ำ-ไฟทีละห้อง</div><div class="x">✕</div></div>
+      <div class="card" style="top:770px"><div class="ic emoji">🧮</div><div class="tx">คิดบิลเอง ผิดบ่อย</div><div class="x">✕</div></div>
+      <div class="card" style="top:980px"><div class="ic emoji">💸</div><div class="tx">ตามทวงค่าเช่าทุกเดือน</div><div class="x">✕</div></div>
+      <div class="card" style="top:1190px"><div class="ic emoji">📱</div><div class="tx">ผู้เช่าทักมาไม่หยุด</div><div class="x">✕</div><div class="badge" id="badge">1</div></div>
+      <div class="center" id="s2tired">เหนื่อยไหม?</div>
+    </div>
+  </div>
+
+  <!-- ============ 3. REVEAL ============ -->
+  <div class="scene" id="s3">
+    <div id="rays"></div>
+    <div class="full" id="s3in">
+      <div class="abs" id="ring"></div>
+      <div id="sparks"></div>
+      <div class="abs" id="logo" data-logo></div>
+      <div class="center" id="word"></div>
+      <div class="center" id="thai"><span class="pill">หอแคร์</span></div>
+      <div class="center" id="tag">แพลตฟอร์มบริหารหอพัก</div>
+      <div class="center" id="tag2"><span class="inl">ครบ</span><span class="inl">จบ</span><span class="inl">ในที่เดียว</span></div>
+    </div>
+  </div>
+
+  <!-- ============ 4. FEATURES ============ -->
+  <div class="scene" id="s4">
+    <div class="blob" id="blobA" style="left:-200px;top:300px;width:600px;height:600px;background:rgba(19,181,169,.25)"></div>
+    <div class="blob" id="blobB" style="left:650px;top:1200px;width:600px;height:600px;background:rgba(255,138,61,.18)"></div>
+    <div class="center" id="hdr"><div class="mini" data-logo></div>HorCare</div>
+
+    <div class="ftitle"><span class="chip">ฟีเจอร์ 1/5</span><h2>ออกบิลอัตโนมัติ</h2><p>คำนวณค่าเช่า น้ำ ไฟ ครบทุกห้อง</p></div>
+    <div class="ftitle"><span class="chip">ฟีเจอร์ 2/5</span><h2>ส่งบิลถึงผู้เช่าทันที</h2><p>ไม่ต้องพิมพ์ ไม่ต้องเดินแจกทีละห้อง</p></div>
+    <div class="ftitle"><span class="chip">ฟีเจอร์ 3/5</span><h2>เช็คยอดชำระได้ทันที</h2><p>รู้เลยห้องไหนจ่ายแล้ว ห้องไหนค้าง</p></div>
+    <div class="ftitle"><span class="chip">ฟีเจอร์ 4/5</span><h2>รับแจ้งซ่อมออนไลน์</h2><p>ติดตามงานซ่อมได้ทุกขั้นตอน</p></div>
+    <div class="ftitle"><span class="chip">ฟีเจอร์ 5/5</span><h2>ดูรายรับแบบเรียลไทม์</h2><p>สรุปภาพรวมหอพักในหน้าเดียว</p></div>
+
+    <div class="abs" id="phone">
+      <div id="screen">
+        <div id="notch"></div>
+        <div id="sbar"><span>9:41</span><span>●●● 100%</span></div>
+        <div id="strip">
+
+          <!-- P0: bills -->
+          <div class="panel" id="p0">
+            <div class="appbar">บิลประจำเดือน<small>ต.ค. 2569 · 24 ห้อง</small></div>
+            <div class="pc">
+              <div class="btn" id="p0btn"><span class="emoji">⚡</span>&nbsp;ออกบิลทั้งหมด<div class="ripple" id="p0rip"></div></div>
+              <div style="height:24px"></div>
+              <div id="p0rows"></div>
+              <div id="p0done" style="text-align:center;font-size:26px;font-weight:600;color:#138A44;margin-top:6px">✓ ออกบิลครบ 24 ห้องแล้ว</div>
+            </div>
+          </div>
+
+          <!-- P1: send -->
+          <div class="panel" id="p1">
+            <div class="appbar">ส่งบิลให้ผู้เช่า<small>ส่งอัตโนมัติทุกห้อง</small></div>
+            <div class="pc">
+              <div class="box" style="height:300px;position:relative;overflow:hidden">
+                <div class="abs" id="p1env" style="left:178px;top:62px;width:150px;height:150px;border-radius:50%;background:#E3F6F4;display:flex;align-items:center;justify-content:center;font-size:84px"><span class="emoji">📨</span></div>
+                <div class="abs emoji" id="p1plane" style="left:210px;top:80px;font-size:90px">✈️</div>
+                <div class="abs" style="left:0;width:100%;top:232px;text-align:center;font-size:24px;color:#7b8b8b">กำลังส่งบิลให้ผู้เช่า...</div>
+              </div>
+              <div class="box" style="padding:24px 26px;margin-top:18px">
+                <div style="display:flex;justify-content:space-between;font-size:28px;font-weight:600;margin-bottom:14px">
+                  <span>ส่งแล้ว</span><span id="p1cnt" style="color:var(--teal);font-weight:800">0/24 ห้อง</span></div>
+                <div class="bar"><i id="p1bar" style="width:0"></i></div>
+              </div>
+              <div style="height:18px"></div>
+              <div class="toast box"><div class="ti emoji">🔔</div>ห้อง 101 ได้รับบิลแล้ว</div>
+              <div class="toast box"><div class="ti emoji">🔔</div>ห้อง 102 ได้รับบิลแล้ว</div>
+              <div class="toast box"><div class="ti emoji">👀</div>ห้อง 103 เปิดดูบิลแล้ว</div>
+            </div>
+          </div>
+
+          <!-- P2: payments -->
+          <div class="panel" id="p2">
+            <div class="appbar">สถานะการชำระ<small>อัปเดตอัตโนมัติ</small></div>
+            <div class="pc">
+              <div style="display:flex;gap:14px;margin-bottom:18px">
+                <div class="box" style="flex:1;padding:18px 22px"><div style="font-size:22px;color:#138A44">ชำระแล้ว</div><div id="p2paid" style="font-size:46px;font-weight:800;color:#138A44">0</div></div>
+                <div class="box" style="flex:1;padding:18px 22px"><div style="font-size:22px;color:#E06A1B">รอชำระ</div><div id="p2pend" style="font-size:46px;font-weight:800;color:#E06A1B">24</div></div>
+              </div>
+              <div id="p2rows"></div>
+            </div>
+          </div>
+
+          <!-- P3: maintenance -->
+          <div class="panel" id="p3">
+            <div class="appbar">แจ้งซ่อม<small>งานซ่อมทั้งหมด</small></div>
+            <div class="pc">
+              <div class="box" id="p3card" style="padding:24px">
+                <div style="height:200px;border-radius:20px;background:linear-gradient(135deg,#cfe9f7,#9fd3ee);display:flex;align-items:center;justify-content:center;font-size:110px" class="emoji">🚿</div>
+                <div style="font-size:34px;font-weight:800;margin-top:18px">ก๊อกน้ำรั่ว</div>
+                <div style="font-size:22px;color:#7b8b8b">ห้อง 305 · แจ้งเมื่อ 10:24 น.</div>
+                <div class="step" id="p3step">
+                  <div class="ln" style="left:60px;width:170px"><i></i></div>
+                  <div class="ln" style="left:276px;width:170px"><i></i></div>
+                  <div class="col"><div class="dot">✓</div>รับเรื่อง</div>
+                  <div class="col"><div class="dot">✓</div>กำลังซ่อม</div>
+                  <div class="col"><div class="dot">✓</div>เสร็จแล้ว</div>
+                </div>
+              </div>
+              <div class="box row" style="margin-top:18px" id="p3t2">
+                <div class="emoji" style="font-size:40px;margin-right:16px">💡</div>
+                <div><div class="rn" style="font-size:26px">หลอดไฟเสีย</div><div class="rs">ห้อง 210</div></div>
+                <div class="chipst paid" style="top:27px">เสร็จแล้ว</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- P4: dashboard -->
+          <div class="panel" id="p4">
+            <div class="appbar">แดชบอร์ด<small>ภาพรวมเดือนนี้</small></div>
+            <div class="pc">
+              <div class="box" style="padding:24px 28px">
+                <div style="font-size:24px;color:#7b8b8b">รายรับเดือนนี้</div>
+                <div id="p4num" style="font-size:66px;font-weight:800;color:var(--ink);line-height:1.2">฿0</div>
+                <div id="p4up" style="display:inline-block;font-size:22px;font-weight:600;color:#138A44;background:#DDF8E6;padding:2px 16px;border-radius:16px">▲ เก็บครบ 24/24 ห้อง</div>
+              </div>
+              <div class="box" style="padding:24px 18px 16px;margin-top:16px">
+                <div class="bars" id="p4bars"></div>
+              </div>
+              <div class="box" style="padding:20px 28px;margin-top:16px;display:flex;align-items:center;gap:26px">
+                <svg width="120" height="120" viewBox="0 0 120 120"><circle cx="60" cy="60" r="48" fill="none" stroke="#E2ECEB" stroke-width="16"/>
+                  <circle id="p4ring" cx="60" cy="60" r="48" fill="none" stroke="#0B8A83" stroke-width="16" stroke-linecap="round" transform="rotate(-90 60 60)" stroke-dasharray="301.6" stroke-dashoffset="301.6"/></svg>
+                <div><div style="font-size:24px;color:#7b8b8b">อัตราเข้าพัก</div><div id="p4occ" style="font-size:52px;font-weight:800;color:var(--ink)">0%</div></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="center" id="dots"></div>
+  </div>
+
+  <!-- ============ 5. BENEFIT ============ -->
+  <div class="scene" id="s5">
+    <div class="full" id="s5in">
+      <div class="center" id="b1"><span class="w">งานหอพักที่เคยวุ่นวาย<i id="strike"></i></span></div>
+      <div class="center" id="b2">จบได้ในไม่กี่คลิก</div>
+      <div class="center" id="b3">มีเวลาให้ตัวเองมากขึ้น <span class="emoji">😊</span></div>
+      <div class="clk"></div><div class="clk"></div><div class="clk"></div>
+      <svg class="abs" id="cursor" viewBox="0 0 24 24"><path d="M4 2 L4 19 L8.5 15 L11.5 22 L14.5 20.7 L11.6 14 L18 14 Z" fill="#fff" stroke="#0B3B39" stroke-width="1.4" stroke-linejoin="round"/></svg>
+    </div>
+  </div>
+
+  <!-- ============ 6. CTA ============ -->
+  <div class="scene" id="s6">
+    <div class="bub-bg" style="left:-60px;top:90px;width:260px;height:150px"></div>
+    <div class="bub-bg" style="left:860px;top:330px;width:300px;height:170px"></div>
+    <div class="bub-bg" style="left:-90px;top:1560px;width:280px;height:160px"></div>
+    <div class="bub-bg" style="left:880px;top:1650px;width:260px;height:150px"></div>
+    <div class="center" id="c1">อยากเห็นระบบจริง?</div>
+    <div class="center" id="c2">ทักแชทมาเลย!</div>
+
+    <div class="abs" id="chat">
+      <div class="hd"><div class="av" data-logo></div><div><div class="nm">HorCare หอแคร์</div><div class="on">● ออนไลน์</div></div></div>
+      <div class="body">
+        <div class="typing" id="ty1" style="top:24px"><i></i><i></i><i></i></div>
+        <div class="msg in" id="m1" style="top:24px">สวัสดีครับ <span class="emoji">👋</span><br>สนใจดูเดโม่ระบบ HorCare ไหมครับ?</div>
+        <div class="msg out" id="m2" style="top:206px">สนใจครับ! ขอจองเดโม่หน่อย <span class="emoji">🙌</span></div>
+        <div class="typing" id="ty2" style="top:326px"><i></i><i></i><i></i></div>
+        <div class="msg in" id="m3" style="top:326px">ได้เลยครับ <span class="emoji">✅</span><br>ทีมงานจะนัดเวลาเดโม่ให้นะครับ</div>
+      </div>
+      <div id="inbar"><div class="fld ph" id="fld">พิมพ์ข้อความ...</div><div class="snd" id="snd">➤</div></div>
+    </div>
+
+    <div class="abs" id="ctaRing"></div>
+    <div class="abs" id="cta"><span class="emoji">💬</span>ทักแชท จองเดโม่ฟรี</div>
+    <div class="abs" id="tapr"></div>
+    <div class="abs emoji" id="hand">👆</div>
+    <div class="center" id="hint">กดปุ่ม <b>“ส่งข้อความ”</b> ด้านล่างได้เลย</div>
+    <div class="abs" id="arrows"></div>
+    <div class="center" id="foot"><div class="mini" data-logo></div><b>HorCare</b> · หอแคร์ ระบบบริหารหอพัก</div>
+  </div>
+
+  <div id="flash"></div>
+</div>
+
+<script>
+const TL = window.TL;
+const $ = id => document.getElementById(id);
+const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
+
+// ---------- math / easing ----------
+const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
+const p = (t, s, d) => clamp((t - s) / d);
+const bump = x => Math.sin(Math.PI * clamp(x));
+const E = {
+  out: x => 1 - Math.pow(1 - x, 3),
+  in: x => x * x * x,
+  inOut: x => x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2,
+  back: x => { const c1 = 1.70158, c3 = c1 + 1; return 1 + c3 * Math.pow(x - 1, 3) + c1 * Math.pow(x - 1, 2); },
+  elastic: x => x <= 0 ? 0 : x >= 1 ? 1 : Math.pow(2, -10 * x) * Math.sin((x * 10 - .75) * (2 * Math.PI) / 3) + 1,
+};
+function S(el, { x = 0, y = 0, s = 1, sx, sy, r = 0, o = 1, blur = 0 } = {}) {
+  el.style.transform = `translate(${x}px,${y}px) rotate(${r}deg) scale(${sx ?? s},${sy ?? s})`;
+  o = clamp(o);
+  el.style.opacity = o;
+  el.style.visibility = o < 0.002 ? 'hidden' : 'visible';
+  el.style.filter = blur > 0.05 ? `blur(${blur}px)` : 'none';
+}
+// deterministic decaying camera shake
+function shake(t, start, dur, amp) {
+  const k = p(t, start, dur);
+  if (k <= 0 || k >= 1) return { x: 0, y: 0 };
+  const a = amp * (1 - k) * (1 - k);
+  return { x: a * Math.sin(t * 93.1), y: a * Math.cos(t * 127.7) };
+}
+// seeded random
+let seed = 12345;
+const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+
+// ---------- shared logo ----------
+const LOGO = `<svg viewBox="0 0 100 100"><path d="M50 14 L86 44 V84 Q86 90 80 90 H20 Q14 90 14 84 V44 Z" fill="#0B8A83" stroke="#0B8A83" stroke-width="8" stroke-linejoin="round"/>
+<path d="M50 80 C31 67 33 50 43.5 51 C47 51.4 49 54 50 56.5 C51 54 53 51.4 56.5 51 C67 50 69 67 50 80 Z" fill="#FF8A3D"/>
+<rect x="44" y="26" width="12" height="12" rx="3" fill="#fff" opacity=".9"/></svg>`;
+$$('[data-logo]').forEach(el => el.innerHTML = LOGO);
+
+// ---------- build dynamic DOM ----------
+const papers = [];
+for (let i = 0; i < 16; i++) {
+  const el = document.createElement('div');
+  el.className = 'paper';
+  el.innerHTML = `<b>ใบแจ้งหนี้</b><i></i><i></i><i></i><i></i><u>ค้าง</u>`;
+  $('papers').appendChild(el);
+  const s = .55 + rnd() * .55;
+  papers.push({ el, x: rnd() * 1000 - 40, pre: rnd() * 2.4, v: 380 + rnd() * 420, r0: rnd() * 360, vr: (rnd() - .5) * 120, s, blur: s < .75 ? 3 : 0 });
+}
+const sparks = [];
+for (let i = 0; i < 14; i++) {
+  const el = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+  el.setAttribute('viewBox', '0 0 20 20'); el.setAttribute('class', 'spark');
+  el.innerHTML = `<path d="M10 0 Q11 9 20 10 Q11 11 10 20 Q9 11 0 10 Q9 9 10 0Z" fill="${i % 3 ? '#fff' : '#FFD166'}"/>`;
+  $('sparks').appendChild(el);
+  sparks.push({ el, a: i / 14 * Math.PI * 2 + rnd() * .3, d: 260 + rnd() * 200, s: .8 + rnd() * 1.4 });
+}
+$('word').innerHTML = 'HorCare'.split('').map((c, i) => `<span class="inl${i >= 3 ? ' c' : ''}">${c}</span>`).join('');
+const wordL = $$('#word span');
+
+const bills = [['101', '3,450'], ['102', '3,280'], ['103', '3,615'], ['201', '3,390'], ['202', '3,520'], ['203', '3,305']];
+$('p0rows').innerHTML = bills.map(([r, a]) => `<div class="box row"><div><div class="rn">ห้อง ${r}</div><div class="rs">ค่าเช่า + น้ำ + ไฟ</div></div><div class="amt">฿${a}</div><div class="ck">✓</div></div>`).join('');
+$('p2rows').innerHTML = bills.map(([r]) => `<div class="box row"><div><div class="rn">ห้อง ${r}</div><div class="rs">ครบกำหนด 5 พ.ย.</div></div><div class="chipst pend">รอชำระ</div><div class="chipst paid">ชำระแล้ว ✓</div></div>`).join('');
+const months = ['พ.ค.', 'มิ.ย.', 'ก.ค.', 'ส.ค.', 'ก.ย.', 'ต.ค.'], heights = [.55, .62, .58, .71, .8, .95];
+$('p4bars').innerHTML = months.map(m => `<div><b style="height:${0}px"></b><span>${m}</span></div>`).join('');
+$('dots').innerHTML = '<i></i>'.repeat(TL.features.count);
+$('arrows').innerHTML = '<svg viewBox="0 0 100 50"><path d="M15 10 L50 40 L85 10" fill="none" stroke="#FFD166" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/></svg>'.repeat(3);
+
+const cards = $$('#s2in .card');
+const ftitles = $$('#s4 .ftitle');
+const p0rows = $$('#p0rows .row'), p0ck = $$('#p0rows .ck');
+const p1toasts = $$('#p1 .toast');
+const p2rows = $$('#p2rows .row');
+const p3dots = $$('#p3step .dot'), p3lns = $$('#p3step .ln i');
+const p4bars = $$('#p4bars b');
+const dots = $$('#dots i');
+const clks = $$('#s5 .clk');
+const arrows = $$('#arrows svg');
+const tyDots1 = $$('#ty1 i'), tyDots2 = $$('#ty2 i');
+const typedText = 'สนใจครับ! ขอจองเดโม่หน่อย';
+const graphemes = Array.from(new Intl.Segmenter('th', { granularity: 'grapheme' }).segment(typedText), s => s.segment);
+
+// ---------- scenes ----------
+function scene1(t) {
+  const H = TL.hook;
+  papers.forEach(q => {
+    const tt = t + q.pre;
+    S(q.el, { x: q.x, y: -280 + tt * q.v, r: q.r0 + tt * q.vr, s: q.s, o: .9, blur: q.blur });
+  });
+  const out = E.in(p(t, H.out, .3));
+  const k = E.out(p(t, H.kicker, .5));
+  S($('s1k'), { y: (1 - k) * 40, o: k * (1 - out) });
+  const a = E.back(p(t, H.line1, .5));
+  S($('s1a'), { y: (1 - a) * 90, o: p(t, H.line1, .15) * (1 - out), s: 1 + out * .25 });
+  const b = E.back(p(t, H.line2, .45));
+  S($('s1b'), { s: .5 + .5 * b + out * .25, o: p(t, H.line2, .12) * (1 - out) });
+  $('s1mark').style.setProperty('--w', (E.out(p(t, H.mark, .35)) * 100) + '%');
+  const c = E.out(p(t, H.mark + .3, .5));
+  S($('s1sub'), { y: (1 - c) * 30, o: c * (1 - out) });
+  const sh = shake(t, H.line2 + .05, .3, 16);
+  S($('s1txt'), { x: sh.x, y: sh.y, blur: out * 8 });
+}
+
+function scene2(t) {
+  const P = TL.pain;
+  const ti = E.out(p(t, P.title, .45));
+  S($('s2t'), { y: (1 - ti) * -60, o: ti });
+  P.cards.forEach((c, i) => {
+    const e = E.back(p(t, c, .42)), dir = i % 2 ? 1 : -1;
+    const sh = shake(t, c + .3, .25, 12);
+    let jx = 0;
+    if (i === 3) jx = (t > c + .45 && t < P.tired) ? Math.sin(t * 160) * 5 : 0;  // phone vibrating
+    S(cards[i], { x: dir * (1 - e) * 1150 + sh.x + jx, y: sh.y, r: dir * (1 - e) * -14, o: p(t, c, .08) });
+    const xe = E.back(p(t, c + .32, .3));
+    S(cards[i].querySelector('.x'), { s: xe, r: (1 - xe) * 90, o: p(t, c + .32, .05) });
+  });
+  const bs = P.cards[3] + .35, bc = p(t, bs, .7);
+  $('badge').textContent = bc >= 1 ? '99+' : String(Math.max(1, Math.round(1 + 98 * E.in(bc))));
+  S($('badge'), { s: 1 + .2 * Math.abs(Math.sin(t * 22)) * (bc > 0 && bc < 1 ? 1 : 0) + .3 * (1 - E.back(p(t, bs, .3))), o: p(t, bs, .05) });
+  const te = E.back(p(t, P.tired, .4));
+  S($('s2tired'), { s: .3 + .7 * te, r: (1 - te) * -10, o: p(t, P.tired, .08) });
+  $('s2vig').style.opacity = .5 + .5 * Math.abs(Math.sin(t * 3)) * p(t, P.tired - .5, .5);
+  const k = E.in(p(t, P.implode, .35));
+  const sh = shake(t, P.tired, .45, 26);
+  S($('s2in'), { x: sh.x, y: sh.y, s: 1 - k * .85, r: k * 25, o: 1 - k * k, blur: k * 10 });
+}
+
+function scene3(t) {
+  const R = TL.reveal;
+  const r = E.out(p(t, R.wipe, .45)) * 1300;
+  $('s3').style.clipPath = `circle(${r}px at 50% 50%)`;
+  S($('rays'), { r: t * 12, o: .12 });
+  const e = E.back(p(t, R.logo, .6));
+  const fl = Math.sin(t * 2.2) * 8;
+  S($('logo'), { s: e, r: (1 - e) * -30, y: fl, o: p(t, R.logo, .1) });
+  const k = E.out(p(t, R.logo + .12, .75));
+  S($('ring'), { s: .5 + k * 2.4, o: k > 0 ? (1 - k) * .9 : 0 });
+  const k2 = E.out(p(t, R.logo + .15, .9));
+  sparks.forEach(q => S(q.el, { x: Math.cos(q.a) * q.d * k2, y: Math.sin(q.a) * q.d * k2, s: q.s * (1 - k2 * .7), r: k2 * 180, o: k2 > 0 ? 1 - E.in(k2) : 0 }));
+  wordL.forEach((el, i) => { const w = E.back(p(t, R.word + i * .05, .45)); S(el, { y: (1 - w) * 100, o: p(t, R.word + i * .05, .15) }); });
+  const th = E.back(p(t, R.thai, .45));
+  S($('thai'), { s: .6 + .4 * th, o: p(t, R.thai, .12) });
+  const tg = E.out(p(t, R.tag, .45));
+  S($('tag'), { y: (1 - tg) * 40, o: tg });
+  $$('#tag2 .inl').forEach((el, i) => { const w = E.back(p(t, R.tag2[i], .35)); S(el, { s: .4 + .6 * w, o: p(t, R.tag2[i], .08) }); });
+  const out = E.inOut(p(t, R.out, .45));
+  S($('s3in'), { y: -out * 380, o: 1 - out, s: 1 - out * .1 });
+}
+
+function scene4(t) {
+  const F = TL.features;
+  const en = E.out(p(t, F.enter, .5));
+  S($('s4'), { y: (1 - en) * 1920 });
+  S($('blobA'), { x: Math.sin(t * .8) * 60, y: Math.cos(t * .6) * 50 });
+  S($('blobB'), { x: Math.cos(t * .7) * 60, y: Math.sin(t * .9) * 50 });
+  const ph = E.back(p(t, F.phone, .65));
+  S($('hdr'), { o: p(t, F.enter + .3, .3) });
+
+  const st = i => F.start + i * F.step;
+  let pos = 0;
+  for (let i = 1; i < F.count; i++) pos += E.inOut(p(t, st(i) - .15, .4));
+  $('strip').style.transform = `translateX(${-pos * 558}px)`;
+
+  ftitles.forEach((el, i) => {
+    const tin = i === 0 ? F.enter + .35 : st(i) - .05;
+    const tout = i === F.count - 1 ? 1e9 : st(i + 1) - .2;
+    const a = E.out(p(t, tin, .4)), b = E.in(p(t, tout, .22));
+    S(el, { x: (1 - a) * 140 - b * 140, o: a * (1 - b) });
+  });
+  dots.forEach((d, i) => { const act = clamp(1 - Math.abs(pos - i)); d.style.width = (20 + 44 * act) + 'px'; d.style.opacity = .3 + .7 * act; });
+  S($('dots'), { o: p(t, F.enter + .5, .3) });
+
+  // P0 bills
+  let lt = t - st(0);
+  S($('p0btn'), { s: 1 - .08 * bump(p(lt, .3, .22)) });
+  const rk = p(lt, .32, .45);
+  S($('p0rip'), { s: rk * 6, o: rk > 0 ? 1 - rk : 0 });
+  p0rows.forEach((el, j) => {
+    const e = E.back(p(lt, .5 + j * .12, .35));
+    S(el, { x: (1 - e) * 90, o: p(lt, .5 + j * .12, .1) });
+    const c = E.back(p(lt, .62 + j * .12, .3));
+    S(p0ck[j], { s: c, o: p(lt, .62 + j * .12, .05) });
+  });
+  S($('p0done'), { y: (1 - E.out(p(lt, 1.3, .35))) * 20, o: p(lt, 1.3, .2) });
+  // P1 send
+  lt = t - st(1);
+  const pl = E.inOut(p(lt, .15, .9));
+  S($('p1plane'), { x: -340 + pl * 680, y: 80 - pl * 160, r: -10 + pl * 10, s: .8 + bump(pl) * .4 });
+  const n = Math.round(24 * E.out(p(lt, .3, .9)));
+  $('p1cnt').textContent = `${n}/24 ห้อง`;
+  $('p1bar').style.width = (n / 24 * 100) + '%';
+  p1toasts.forEach((el, j) => { const e = E.back(p(lt, .7 + j * .25, .35)); S(el, { y: (1 - e) * -40, s: .9 + .1 * e, o: p(lt, .7 + j * .25, .1) }); });
+  // P2 payments
+  lt = t - st(2);
+  let paidRows = 0;
+  p2rows.forEach((el, j) => {
+    const k = p(lt, .35 + j * .16, .2);
+    if (k >= .5) paidRows++;
+    S(el.querySelector('.pend'), { sy: k < .5 ? 1 - 2 * k : 0, o: k < .5 ? 1 : 0 });
+    const w = k >= .5 ? E.back((k - .5) * 2) : 0;
+    S(el.querySelector('.paid'), { sy: w, s: 1, o: k >= .5 ? 1 : 0 });
+  });
+  $('p2paid').textContent = paidRows * 4;
+  $('p2pend').textContent = 24 - paidRows * 4;
+  // P3 maintenance
+  lt = t - st(3);
+  const ce = E.out(p(lt, -.1, .4));
+  S($('p3card'), { y: (1 - ce) * 40, o: .3 + .7 * ce });
+  [.35, .75, 1.15].forEach((s, j) => {
+    const d = E.back(p(lt, s, .3));
+    p3dots[j].style.background = d > 0 ? '#22C55E' : '#E2ECEB';
+    S(p3dots[j], { s: d > 0 ? .7 + .3 * d : 1 });
+    if (j > 0) p3lns[j - 1].style.width = (E.inOut(p(lt, s - .3, .3)) * 100) + '%';
+  });
+  // P4 dashboard
+  lt = t - st(4);
+  const v = Math.round(248500 * E.out(p(lt, .15, 1.05)) / 10) * 10;
+  $('p4num').textContent = '฿' + v.toLocaleString('en-US');
+  p4bars.forEach((b, j) => { b.style.height = (230 - 40) * heights[j] * E.back(p(lt, .2 + j * .08, .4)) + 'px'; });
+  const oc = E.out(p(lt, .3, .9));
+  $('p4ring').setAttribute('stroke-dashoffset', 301.6 * (1 - .96 * oc));
+  $('p4occ').textContent = Math.round(96 * oc) + '%';
+  S($('p4up'), { s: E.back(p(lt, 1.2, .3)), o: p(lt, 1.2, .05) });
+
+  const out = E.in(p(t, F.out, .4));
+  S($('phone'), { y: (1 - ph) * 800 + Math.sin(t * 1.8) * 8 + out * 200, s: 1 - out * .15, r: (1 - ph) * 10 + Math.sin(t * 1.1) * .6 });
+}
+
+function scene5(t) {
+  const B = TL.benefit;
+  const r = E.out(p(t, B.in, .45)) * 1300;
+  $('s5').style.clipPath = `circle(${r}px at 50% 62%)`;
+  const l1 = E.out(p(t, B.line1, .45));
+  const sk = E.inOut(p(t, B.strike, .3));
+  S($('b1'), { y: (1 - l1) * 50 - E.out(p(t, B.line2, .4)) * 30, o: l1 * (1 - sk * .45) });
+  $('strike').style.width = `calc(${sk * 100}% + ${sk * 24}px)`;
+  const l2 = E.back(p(t, B.line2, .45));
+  S($('b2'), { s: .4 + .6 * l2, o: p(t, B.line2, .08), r: (1 - l2) * -6 });
+  const l3 = E.out(p(t, B.line3, .45));
+  S($('b3'), { y: (1 - l3) * 40, o: l3 });
+  const pts = [[230, 1000], [850, 930], [560, 1010]];
+  B.clicks.forEach((c, i) => {
+    const k = E.out(p(t, c, .45));
+    clks[i].style.left = pts[i][0] + 'px'; clks[i].style.top = pts[i][1] + 'px';
+    S(clks[i], { s: .2 + k * 1.3, o: k > 0 ? 1 - k : 0 });
+  });
+  // cursor travels between click points
+  let cx = 900, cy = 1300;
+  const legs = [[B.clicks[0] - .3, 900, 1300, ...pts[0]], [B.clicks[1] - .18, ...pts[0], ...pts[1]], [B.clicks[2] - .18, ...pts[1], ...pts[2]], [B.clicks[2] + .25, ...pts[2], 640, 1400]];
+  legs.forEach(([s, x0, y0, x1, y1]) => { if (t >= s) { const m = E.inOut(p(t, s, s === legs[0][0] ? .3 : .18)); cx = x0 + (x1 - x0) * m; cy = y0 + (y1 - y0) * m; } });
+  let cs = 1; B.clicks.forEach(c => cs -= .2 * bump(p(t, c - .04, .12)));
+  S($('cursor'), { x: cx - 10, y: cy - 6, s: cs, o: p(t, B.clicks[0] - .3, .15) * (1 - p(t, B.clicks[2] + .3, .2)) });
+  const out = E.in(p(t, B.out, .35));
+  S($('s5in'), { y: -out * 300, o: 1 - out });
+}
+
+function scene6(t) {
+  const C = TL.cta;
+  const en = E.inOut(p(t, C.in, .45));
+  S($('s6'), { y: (1 - en) * 1920 });
+  const h1 = E.out(p(t, C.head1, .4));
+  S($('c1'), { y: (1 - h1) * -40, o: h1 });
+  const h2 = E.back(p(t, C.head2, .5));
+  S($('c2'), { s: .3 + .7 * h2, r: (1 - h2) * 8 + Math.sin((t - C.head2) * 5) * 1.2 * p(t, C.head2 + .5, .3), o: p(t, C.head2, .08) });
+  const ch = E.back(p(t, C.head2 + .2, .55));
+  S($('chat'), { y: (1 - ch) * 700, o: p(t, C.head2 + .2, .1) });
+
+  const typing = (el, ds, s0, s1) => {
+    const on = t >= s0 && t < s1;
+    S(el, { s: on ? E.back(p(t, s0, .25)) : 0, o: on ? 1 : 0 });
+    ds.forEach((d, i) => d.style.transform = `translateY(${-Math.max(0, Math.sin((t - s0) * 9 - i * .8)) * 12}px)`);
+  };
+  const pop = (el, s) => { const e = E.back(p(t, s, .38)); S(el, { s: .5 + .5 * e, o: p(t, s, .1) }); };
+  typing($('ty1'), tyDots1, C.typing1, C.msg1);
+  pop($('m1'), C.msg1);
+  pop($('m2'), C.msg2);
+  typing($('ty2'), tyDots2, C.typing2, C.msg3);
+  pop($('m3'), C.msg3);
+
+  // input field types the visitor's message, then sends
+  const ty = p(t, C.type[0], C.type[1] - C.type[0]);
+  const fld = $('fld');
+  if (t >= C.type[0] && t < C.msg2) {
+    const nShow = Math.round(graphemes.length * ty);
+    fld.textContent = graphemes.slice(0, nShow).join('') + (Math.floor(t * 4) % 2 ? '|' : ' ');
+    fld.classList.remove('ph');
+  } else { fld.textContent = 'พิมพ์ข้อความ...'; fld.classList.add('ph'); }
+  S($('snd'), { s: 1 - .2 * bump(p(t, C.send - .08, .2)) });
+
+  // CTA button
+  const bt = E.back(p(t, C.button, .5));
+  const pulse = t > C.button + .5 ? 1 + .035 * Math.sin((t - C.button - .5) * Math.PI * 2 * 1.1) : 1;
+  const squish = 1 - .07 * bump(p(t, C.tap - .05, .22));
+  S($('cta'), { s: (.2 + .8 * bt) * pulse * squish, o: p(t, C.button, .08) });
+  const rp = t > C.button + .5 ? ((t - C.button - .5) % 0.9) / 0.9 : 0;
+  S($('ctaRing'), { s: 1 + rp * .22, sx: 1 + rp * .08, sy: 1 + rp * .3, o: t > C.button + .5 ? (1 - rp) * .8 : 0 });
+
+  // hand pointer taps the button
+  const tx = 760, tyy = 1400;
+  const hm = E.out(p(t, C.hand, .45));
+  const away = E.inOut(p(t, C.tap + .3, .45));
+  const hs = 1 - .15 * bump(p(t, C.tap - .05, .22));
+  S($('hand'), { x: tx - 40 + (1 - hm) * 300 + away * 90, y: tyy - 20 + (1 - hm) * 400 + away * 60, s: hs, r: -15 + (1 - hm) * 20, o: p(t, C.hand, .1) * (1 - away) });
+  const tr = E.out(p(t, C.tap, .5));
+  $('tapr').style.left = tx + 'px'; $('tapr').style.top = tyy + 'px';
+  S($('tapr'), { s: .2 + tr * 2.2, o: tr > 0 ? (1 - tr) * .9 : 0 });
+
+  const hi = E.out(p(t, C.hint, .45));
+  S($('hint'), { y: (1 - hi) * 30, o: hi });
+  arrows.forEach((a, i) => { a.style.opacity = hi * (.35 + .65 * Math.max(0, Math.sin(t * 6 - i * 1.1))); });
+  S($('arrows'), { y: Math.sin(t * 6) * 10, o: hi });
+  const ft = E.out(p(t, C.footer, .5));
+  S($('foot'), { y: (1 - ft) * 30, o: ft * .95 });
+}
+
+const SCENES = [['s1', 'hook', scene1], ['s2', 'pain', scene2], ['s3', 'reveal', scene3], ['s4', 'features', scene4], ['s5', 'benefit', scene5], ['s6', 'cta', scene6]];
+
+function flash(t) {
+  const hits = [[3.0, .25], [TL.reveal.wipe + .05, .55], [TL.cta.button, .25]];
+  let o = 0;
+  hits.forEach(([s, a]) => { const k = p(t, s, .3); if (k > 0 && k < 1) o = Math.max(o, a * (1 - k)); });
+  $('flash').style.opacity = o;
+}
+
+window.render = function (t) {
+  for (const [id, key, fn] of SCENES) {
+    const [a, b] = TL.scenes[key];
+    const on = t >= a && t < b;
+    $(id).style.display = on ? 'block' : 'none';
+    if (on) fn(t);
+  }
+  flash(t);
+};
+
+// live preview in a browser: open scene.html?play  (or ?t=12.5 to freeze a frame)
+const qs = new URLSearchParams(location.search);
+if (qs.has('t')) window.render(parseFloat(qs.get('t')));
+else if (qs.has('play')) {
+  const t0 = performance.now();
+  const loop = () => { window.render(((performance.now() - t0) / 1000) % TL.duration); requestAnimationFrame(loop); };
+  loop();
+} else window.render(0);
+</script>
+</body>
+</html>

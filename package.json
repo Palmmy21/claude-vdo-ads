@@ -1,0 +1,12 @@
+{
+  "name": "horcare-motion-ad",
+  "private": true,
+  "description": "HorCare 30s vertical motion ad — HTML motion scene rendered with Playwright, synthesized SFX/music, encoded with ffmpeg",
+  "scripts": {
+    "build": "bash scripts/build.sh",
+    "preview": "node scripts/render.cjs build/preview --at 1.5,5,9,12,16,19,22,26,29"
+  },
+  "devDependencies": {
+    "playwright": "^1.56.1"
+  }
+}
