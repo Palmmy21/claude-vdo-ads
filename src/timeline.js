@@ -1,5 +1,7 @@
 // Single source of truth for timing (seconds). Used by scene.html (visuals)
 // and scripts/make_audio.py (sound effects + music), so picture and sound stay in sync.
+// "voice" is the Thai voiceover: each line starts at "t" and must finish by "end"
+// (scripts/make_voice.py speeds a line up slightly if needed). Keep the object body valid JSON.
 window.TL = {
   "fps": 30,
   "duration": 30,
@@ -20,5 +22,19 @@ window.TL = {
   "benefit":  { "in": 20.4, "line1": 20.6, "strike": 21.15, "line2": 21.55, "clicks": [21.65, 21.85, 22.05], "line3": 22.3, "out": 22.95 },
   "cta":      { "in": 23.0, "head1": 23.15, "head2": 23.45, "typing1": 23.85, "msg1": 24.4,
                 "type": [24.7, 25.15], "send": 25.25, "msg2": 25.3, "typing2": 25.7, "msg3": 26.2,
-                "button": 26.7, "hand": 27.1, "tap": 27.55, "hint": 27.9, "footer": 28.3, "end": 29.0 }
+                "button": 26.7, "hand": 27.1, "tap": 27.55, "hint": 27.9, "footer": 28.3, "end": 29.0 },
+  "voice": [
+    { "t": 0.2,   "end": 2.75,  "text": "ยังทำบิลค่าเช่า ด้วยมืออยู่ไหม" },
+    { "t": 3.3,   "end": 6.45,  "text": "จดมิเตอร์ คิดบิล ทวงค่าเช่า ทุกเดือน" },
+    { "t": 6.6,   "end": 7.5,   "text": "เหนื่อยไหม" },
+    { "t": 7.75,  "end": 10.5,  "text": "หอแคร์ บริหารหอพัก ครบจบในที่เดียว" },
+    { "t": 10.75, "end": 12.55, "text": "ออกบิลอัตโนมัติ ทุกห้อง" },
+    { "t": 12.65, "end": 14.5,  "text": "ส่งบิลถึงผู้เช่าทันที" },
+    { "t": 14.6,  "end": 16.45, "text": "เช็คยอดชำระได้ทันที" },
+    { "t": 16.55, "end": 18.4,  "text": "รับแจ้งซ่อมออนไลน์" },
+    { "t": 18.5,  "end": 20.35, "text": "ดูรายรับแบบเรียลไทม์" },
+    { "t": 20.6,  "end": 22.95, "text": "งานที่เคยวุ่นวาย จบในไม่กี่คลิก" },
+    { "t": 23.15, "end": 26.0,  "text": "อยากเห็นระบบจริง ทักแชทมาเลยครับ" },
+    { "t": 26.7,  "end": 29.9,  "text": "กดส่งข้อความ จองเดโม่ฟรีได้เลย" }
+  ]
 };

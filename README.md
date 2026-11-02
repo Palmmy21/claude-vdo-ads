@@ -3,7 +3,32 @@
 คลิปโฆษณาแนวตั้ง **1080×1920 (9:16) · 30fps · 30 วินาที** พร้อม Sound Effect และเพลงประกอบ
 สำหรับ Facebook / Instagram Reels / TikTok — เป้าหมายคือให้คนดู **ทักแชท (DM) เพื่อจองเดโม่**
 
-▶ ไฟล์คลิป: [`output/horcare-ad-30s.mp4`](output/horcare-ad-30s.mp4) · ภาพปก: [`output/cover.jpg`](output/cover.jpg)
+▶ ไฟล์คลิป
+- **มีเสียงพากย์ภาษาไทย:** [`output/horcare-ad-30s-voiceover.mp4`](output/horcare-ad-30s-voiceover.mp4)
+- ไม่มีเสียงพากย์ (เพลง + SFX): [`output/horcare-ad-30s.mp4`](output/horcare-ad-30s.mp4)
+- ภาพปก: [`output/cover.jpg`](output/cover.jpg)
+
+## สคริปต์เสียงพากย์
+
+| เวลา | บทพากย์ |
+|---|---|
+| 0:00 | ยังทำบิลค่าเช่า ด้วยมืออยู่ไหม |
+| 0:03 | จดมิเตอร์ คิดบิล ทวงค่าเช่า ทุกเดือน |
+| 0:06.6 | เหนื่อยไหม |
+| 0:07.7 | หอแคร์ บริหารหอพัก ครบจบในที่เดียว |
+| 0:10.7 | ออกบิลอัตโนมัติ ทุกห้อง |
+| 0:12.6 | ส่งบิลถึงผู้เช่าทันที |
+| 0:14.6 | เช็คยอดชำระได้ทันที |
+| 0:16.5 | รับแจ้งซ่อมออนไลน์ |
+| 0:18.5 | ดูรายรับแบบเรียลไทม์ |
+| 0:20.6 | งานที่เคยวุ่นวาย จบในไม่กี่คลิก |
+| 0:23.1 | อยากเห็นระบบจริง ทักแชทมาเลยครับ |
+| 0:26.7 | กดส่งข้อความ จองเดโม่ฟรีได้เลย |
+
+เสียงพากย์ตอนนี้สร้างด้วย TTS แบบออฟไลน์ (Meta MMS Thai ผ่าน sherpa-onnx) ฟังรู้เรื่องแต่ยังเป็นเสียงสังเคราะห์
+วรรณยุกต์บางคำเพี้ยน — **แนะนำให้อัดเสียงคนจริงหรือใช้ Thai TTS เชิงพาณิชย์ก่อนยิงแอดจริง**
+อัดตามตารางด้านบน (30 วินาที) บันทึกเป็น `voice/voiceover.wav` แล้วรัน `npm run build` ระบบจะใช้ไฟล์นั้นแทน TTS
+และลดเสียงเพลง/SFX ลงใต้เสียงพากย์ให้อัตโนมัติ
 
 ## โครงสร้างคลิป (Hook → Pain → Reveal → Features → Benefit → CTA)
 
@@ -24,8 +49,9 @@
 src/timeline.js        เวลาของทุกซีน/ทุกจังหวะ (ใช้ร่วมกันทั้งภาพและเสียง → sync เสมอ)
 src/scene.html         Motion graphics ทั้งหมด (HTML/CSS + ฟังก์ชัน render(t) แบบ deterministic)
 scripts/render.cjs     เรนเดอร์เฟรมด้วย Playwright/Chromium
-scripts/make_audio.py  สังเคราะห์ SFX + เพลง (numpy/scipy, ไม่ใช้ไฟล์เสียงลิขสิทธิ์)
-scripts/build.sh       รวมทั้งหมด → output/horcare-ad-30s.mp4
+scripts/make_voice.py  สร้างเสียงพากย์ไทยจากบทใน timeline.js (sherpa-onnx + MMS Thai)
+scripts/make_audio.py  สังเคราะห์ SFX + เพลง แล้วมิกซ์กับเสียงพากย์ (ducking อัตโนมัติ)
+scripts/build.sh       รวมทั้งหมด → output/horcare-ad-30s-voiceover.mp4 (NO_VOICE=1 = ไม่มีเสียงพากย์)
 assets/fonts/          ฟอนต์ Prompt (SIL Open Font License)
 ```
 
@@ -34,7 +60,7 @@ assets/fonts/          ฟอนต์ Prompt (SIL Open Font License)
 ```bash
 npm install            # playwright
 pip install -r requirements.txt
-npm run build          # ≈1 นาที → output/horcare-ad-30s.mp4
+npm run build          # ≈1 นาที → output/horcare-ad-30s-voiceover.mp4 (โหลดโมเดลเสียง ~110MB ครั้งแรก)
 ```
 
 - ดูพรีวิวแบบเล่นสดในเบราว์เซอร์: เปิด `src/scene.html?play` (หรือ `?t=12.5` เพื่อดูเฟรมเดียว)
@@ -45,4 +71,4 @@ npm run build          # ≈1 นาที → output/horcare-ad-30s.mp4
 - **ข้อความ / ฟีเจอร์ / ตัวเลขบน mockup** → แก้ใน `src/scene.html`
 - **สีแบรนด์** → ตัวแปร `--teal`, `--orange`, `--yellow` ใน `:root`
 - **โลโก้** → ค่าคงที่ `LOGO` (SVG) ใน `src/scene.html` — ตอนนี้เป็นโลโก้ชั่วคราว (บ้าน+หัวใจ) แทนที่ด้วย SVG โลโก้จริงได้เลย
-- **จังหวะเวลา** → `src/timeline.js` (เสียงจะเลื่อนตามอัตโนมัติ)
+- **จังหวะเวลา / บทพากย์** → `src/timeline.js` (เสียงจะเลื่อนตามอัตโนมัติ)

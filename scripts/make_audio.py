@@ -3,7 +3,10 @@
 Everything is generated procedurally (no samples, no licensing issues) and timed
 from src/timeline.js so it lines up with the visuals.
 
-    python3 scripts/make_audio.py build/audio.wav
+    python3 scripts/make_audio.py build/audio.wav [build/voice.wav]
+
+If a voiceover track exists (default build/voice.wav, see make_voice.py) it is mixed
+in on top, with the music and effects ducked underneath it.
 """
 import json
 import sys
@@ -415,11 +418,31 @@ for t0 in [R["wipe"], P["tired"], B["line2"], C["head2"], C["button"]]:
     seg = 1 - 0.45 * np.exp(-tt(0.6) * 6)
     duck[i0: i0 + len(seg)] = np.minimum(duck[i0: i0 + len(seg)], seg[: N - i0])
 
-mix = music * duck[:, None] * 0.9 + sfx * 0.85
+# voiceover (optional): duck music ~9 dB and sfx ~3 dB while someone is talking
+voice = np.zeros(N)
+vpath = Path(sys.argv[2]) if len(sys.argv) > 2 else ROOT / "build/voice.wav"
+if vpath.exists():
+    with wave.open(str(vpath)) as w:
+        assert w.getframerate() == SR and w.getnchannels() == 1
+        v = np.frombuffer(w.readframes(w.getnframes()), dtype="<i2") / 32768
+    voice[: min(N, len(v))] = v[:N]
+    env = filt(np.abs(voice), "low", 6)                      # syllable-smoothed level
+    talk = np.clip(env / (np.max(env) * 0.25), 0, 1)
+    hold = int(0.25 * SR)                                     # release so the bed doesn't pump between words
+    talk = np.convolve(talk, np.ones(hold) / hold, mode="same")
+    talk = np.clip(talk * 2, 0, 1)
+    duck = duck * (1 - 0.65 * talk)
+    sfx_gain = (1 - 0.3 * talk)[:, None]
+    print(f"mixed voiceover from {vpath}")
+else:
+    sfx_gain = 1.0
+
+mix = music * duck[:, None] * 0.9 + sfx * 0.85 * sfx_gain + voice[:, None] * 0.95
 fade = int(0.4 * SR)
 mix[-fade:] *= np.linspace(1, 0, fade)[:, None]
-mix = np.tanh(mix * 1.15)                     # soft limiter
-mix = mix / np.max(np.abs(mix)) * 0.93          # peak ≈ -0.6 dBFS
+mix = mix / np.percentile(np.abs(mix), 99.95)   # set level from near-peaks, ignoring a few spikes
+mix = np.tanh(mix * 0.8)                        # soft limiter
+mix = mix / np.max(np.abs(mix)) * 0.68          # ≈ -14 LUFS with the voiceover in
 
 out = Path(sys.argv[1] if len(sys.argv) > 1 else ROOT / "build/audio.wav")
 out.parent.mkdir(parents=True, exist_ok=True)
