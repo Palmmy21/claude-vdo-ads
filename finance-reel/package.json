@@ -1,0 +1,26 @@
+{
+  "name": "finance-reel",
+  "private": true,
+  "description": "Vertical 55-60s personal-finance motion graphic (Remotion + edge-tts)",
+  "scripts": {
+    "tts": "python3 scripts/tts.py",
+    "studio": "remotion studio",
+    "preview": "node scripts/render.mjs --preview",
+    "render": "node scripts/render.mjs",
+    "build": "npm run tts && npm run render"
+  },
+  "dependencies": {
+    "@remotion/bundler": "4.0.543",
+    "@remotion/cli": "4.0.543",
+    "@remotion/media-utils": "4.0.543",
+    "@remotion/paths": "4.0.543",
+    "@remotion/renderer": "4.0.543",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "remotion": "4.0.543"
+  },
+  "devDependencies": {
+    "@types/react": "19.2.2",
+    "typescript": "5.9.3"
+  }
+}

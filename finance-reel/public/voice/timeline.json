@@ -1,0 +1,1706 @@
+{
+ "provider": "edge-tts",
+ "voice": "th-TH-NiwatNeural",
+ "rate": "-5%",
+ "pitch": "+0Hz",
+ "sampleRate": 48000,
+ "totalMs": 59564.1,
+ "loudness": {
+  "input_lufs": -21.0,
+  "output_lufs": -14.1,
+  "true_peak_dbfs": -1.2,
+  "gain_db": 8.7
+ },
+ "voiceFile": "voice/voice.wav",
+ "scenes": [
+  {
+   "id": "hook",
+   "startMs": 0.0,
+   "endMs": 3807.4,
+   "beats": [
+    {
+     "startMs": 250.0,
+     "endMs": 3507.4,
+     "chunks": [
+      {
+       "text": "รายได้ผมเพิ่มทุกปี…",
+       "startMs": 250.0,
+       "endMs": 1815.3,
+       "pauseBeforeMs": 0,
+       "tokens": [
+        {
+         "text": "ราย",
+         "charStart": 0,
+         "charEnd": 3,
+         "startMs": 290.0,
+         "endMs": 526.8
+        },
+        {
+         "text": "ได้",
+         "charStart": 3,
+         "charEnd": 6,
+         "startMs": 553.2,
+         "endMs": 684.7
+        },
+        {
+         "text": "ผม",
+         "charStart": 6,
+         "charEnd": 8,
+         "startMs": 724.2,
+         "endMs": 934.7
+        },
+        {
+         "text": "เพิ่ม",
+         "charStart": 8,
+         "charEnd": 13,
+         "startMs": 947.9,
+         "endMs": 1132.1
+        },
+        {
+         "text": "ทุก",
+         "charStart": 13,
+         "charEnd": 16,
+         "startMs": 1145.2,
+         "endMs": 1276.8
+        },
+        {
+         "text": "ปี",
+         "charStart": 16,
+         "charEnd": 18,
+         "startMs": 1329.5,
+         "endMs": 1645.3
+        }
+       ]
+      },
+      {
+       "text": "แต่เงินเก็บผมเท่าเดิม",
+       "startMs": 1955.3,
+       "endMs": 3507.4,
+       "pauseBeforeMs": 140,
+       "tokens": [
+        {
+         "text": "แต่",
+         "charStart": 0,
+         "charEnd": 3,
+         "startMs": 1995.3,
+         "endMs": 2166.3
+        },
+        {
+         "text": "เงิน",
+         "charStart": 3,
+         "charEnd": 7,
+         "startMs": 2205.8,
+         "endMs": 2403.2
+        },
+        {
+         "text": "เก็บ",
+         "charStart": 7,
+         "charEnd": 11,
+         "startMs": 2429.5,
+         "endMs": 2600.5
+        },
+        {
+         "text": "ผม",
+         "charStart": 11,
+         "charEnd": 13,
+         "startMs": 2613.7,
+         "endMs": 2784.7
+        },
+        {
+         "text": "เท่า",
+         "charStart": 13,
+         "charEnd": 17,
+         "startMs": 2811.1,
+         "endMs": 2942.6
+        },
+        {
+         "text": "เดิม",
+         "charStart": 17,
+         "charEnd": 21,
+         "startMs": 2995.3,
+         "endMs": 3337.4
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "relate",
+   "startMs": 3807.4,
+   "endMs": 11880.0,
+   "beats": [
+    {
+     "startMs": 4007.4,
+     "endMs": 11580.0,
+     "chunks": [
+      {
+       "text": "ผมเคยคิดว่าปัญหาคือหาเงินไม่พอ",
+       "startMs": 4007.4,
+       "endMs": 6427.9,
+       "pauseBeforeMs": 0,
+       "tokens": [
+        {
+         "text": "ผม",
+         "charStart": 0,
+         "charEnd": 2,
+         "startMs": 4047.4,
+         "endMs": 4284.2
+        },
+        {
+         "text": "เคย",
+         "charStart": 2,
+         "charEnd": 5,
+         "startMs": 4310.6,
+         "endMs": 4455.3
+        },
+        {
+         "text": "คิด",
+         "charStart": 5,
+         "charEnd": 8,
+         "startMs": 4481.6,
+         "endMs": 4639.5
+        },
+        {
+         "text": "ว่า",
+         "charStart": 8,
+         "charEnd": 11,
+         "startMs": 4679.0,
+         "endMs": 4836.9
+        },
+        {
+         "text": "ปัญหา",
+         "charStart": 11,
+         "charEnd": 16,
+         "startMs": 4889.5,
+         "endMs": 5152.7
+        },
+        {
+         "text": "คือ",
+         "charStart": 16,
+         "charEnd": 19,
+         "startMs": 5192.1,
+         "endMs": 5350.0
+        },
+        {
+         "text": "หา",
+         "charStart": 19,
+         "charEnd": 21,
+         "startMs": 5363.2,
+         "endMs": 5534.2
+        },
+        {
+         "text": "เงิน",
+         "charStart": 21,
+         "charEnd": 25,
+         "startMs": 5586.9,
+         "endMs": 5731.6
+        },
+        {
+         "text": "ไม่",
+         "charStart": 25,
+         "charEnd": 28,
+         "startMs": 5731.6,
+         "endMs": 5863.2
+        },
+        {
+         "text": "พอ",
+         "charStart": 28,
+         "charEnd": 30,
+         "startMs": 5902.6,
+         "endMs": 6257.9
+        }
+       ]
+      },
+      {
+       "text": "แต่พอได้มากขึ้น ผมก็ใช้มากขึ้น กาแฟแพงขึ้น ผ่อนนั่นนี่ สิ้นเดือนก็เหลือเท่าเดิม",
+       "startMs": 6777.9,
+       "endMs": 11580.0,
+       "pauseBeforeMs": 350,
+       "tokens": [
+        {
+         "text": "แต่",
+         "charStart": 0,
+         "charEnd": 3,
+         "startMs": 6817.9,
+         "endMs": 7015.3
+        },
+        {
+         "text": "พอ",
+         "charStart": 3,
+         "charEnd": 5,
+         "startMs": 7028.4,
+         "endMs": 7160.0
+        },
+        {
+         "text": "ได้",
+         "charStart": 5,
+         "charEnd": 8,
+         "startMs": 7173.1,
+         "endMs": 7252.1
+        },
+        {
+         "text": "มาก",
+         "charStart": 8,
+         "charEnd": 11,
+         "startMs": 7278.4,
+         "endMs": 7502.1
+        },
+        {
+         "text": "ขึ้น",
+         "charStart": 11,
+         "charEnd": 15,
+         "startMs": 7541.6,
+         "endMs": 7765.3
+        },
+        {
+         "text": "ผม",
+         "charStart": 16,
+         "charEnd": 18,
+         "startMs": 7831.1,
+         "endMs": 8028.4
+        },
+        {
+         "text": "ก็",
+         "charStart": 18,
+         "charEnd": 20,
+         "startMs": 8054.7,
+         "endMs": 8173.1
+        },
+        {
+         "text": "ใช้",
+         "charStart": 20,
+         "charEnd": 23,
+         "startMs": 8199.5,
+         "endMs": 8344.2
+        },
+        {
+         "text": "มาก",
+         "charStart": 23,
+         "charEnd": 26,
+         "startMs": 8370.5,
+         "endMs": 8581.1
+        },
+        {
+         "text": "ขึ้น",
+         "charStart": 26,
+         "charEnd": 30,
+         "startMs": 8607.4,
+         "endMs": 8844.2
+        },
+        {
+         "text": "กาแฟแพง",
+         "charStart": 31,
+         "charEnd": 38,
+         "startMs": 8883.7,
+         "endMs": 9278.4
+        },
+        {
+         "text": "ขึ้น",
+         "charStart": 38,
+         "charEnd": 42,
+         "startMs": 9291.6,
+         "endMs": 9475.8
+        },
+        {
+         "text": "ผ่อน",
+         "charStart": 43,
+         "charEnd": 47,
+         "startMs": 9515.3,
+         "endMs": 9752.1
+        },
+        {
+         "text": "นั่น",
+         "charStart": 47,
+         "charEnd": 51,
+         "startMs": 9752.1,
+         "endMs": 9949.5
+        },
+        {
+         "text": "นี่",
+         "charStart": 51,
+         "charEnd": 54,
+         "startMs": 9949.5,
+         "endMs": 10081.1
+        },
+        {
+         "text": "สิ้น",
+         "charStart": 55,
+         "charEnd": 59,
+         "startMs": 10081.1,
+         "endMs": 10317.9
+        },
+        {
+         "text": "เดือน",
+         "charStart": 59,
+         "charEnd": 64,
+         "startMs": 10344.2,
+         "endMs": 10528.4
+        },
+        {
+         "text": "ก็",
+         "charStart": 64,
+         "charEnd": 66,
+         "startMs": 10567.9,
+         "endMs": 10699.5
+        },
+        {
+         "text": "เหลือ",
+         "charStart": 66,
+         "charEnd": 71,
+         "startMs": 10699.5,
+         "endMs": 10831.1
+        },
+        {
+         "text": "เท่า",
+         "charStart": 71,
+         "charEnd": 75,
+         "startMs": 10883.7,
+         "endMs": 11028.4
+        },
+        {
+         "text": "เดิม",
+         "charStart": 75,
+         "charEnd": 79,
+         "startMs": 11067.9,
+         "endMs": 11410.0
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "turn",
+   "startMs": 11880.0,
+   "endMs": 21868.4,
+   "beats": [
+    {
+     "startMs": 12080.0,
+     "endMs": 21568.4,
+     "chunks": [
+      {
+       "text": "จนผมลองจดรายจ่ายจริงจังหนึ่งเดือน",
+       "startMs": 12080.0,
+       "endMs": 14474.2,
+       "pauseBeforeMs": 0,
+       "tokens": [
+        {
+         "text": "จน",
+         "charStart": 0,
+         "charEnd": 2,
+         "startMs": 12120.0,
+         "endMs": 12343.7
+        },
+        {
+         "text": "ผม",
+         "charStart": 2,
+         "charEnd": 4,
+         "startMs": 12383.2,
+         "endMs": 12580.6
+        },
+        {
+         "text": "ลอง",
+         "charStart": 4,
+         "charEnd": 7,
+         "startMs": 12593.7,
+         "endMs": 12764.8
+        },
+        {
+         "text": "จด",
+         "charStart": 7,
+         "charEnd": 9,
+         "startMs": 12804.2,
+         "endMs": 12949.0
+        },
+        {
+         "text": "ราย",
+         "charStart": 9,
+         "charEnd": 12,
+         "startMs": 12975.3,
+         "endMs": 13159.5
+        },
+        {
+         "text": "จ่าย",
+         "charStart": 12,
+         "charEnd": 16,
+         "startMs": 13199.0,
+         "endMs": 13383.2
+        },
+        {
+         "text": "จริงจัง",
+         "charStart": 16,
+         "charEnd": 23,
+         "startMs": 13409.5,
+         "endMs": 13764.8
+        },
+        {
+         "text": "หนึ่ง",
+         "charStart": 23,
+         "charEnd": 28,
+         "startMs": 13764.8,
+         "endMs": 13922.6
+        },
+        {
+         "text": "เดือน",
+         "charStart": 28,
+         "charEnd": 33,
+         "startMs": 13949.0,
+         "endMs": 14304.2
+        }
+       ]
+      },
+      {
+       "text": "แล้วตกใจ เงินหายไปกับเรื่องที่ผมไม่ได้ตั้งใจจะจ่ายเลย",
+       "startMs": 14824.2,
+       "endMs": 18218.4,
+       "pauseBeforeMs": 350,
+       "tokens": [
+        {
+         "text": "แล้ว",
+         "charStart": 0,
+         "charEnd": 4,
+         "startMs": 14864.2,
+         "endMs": 15101.0
+        },
+        {
+         "text": "ตกใจ",
+         "charStart": 4,
+         "charEnd": 8,
+         "startMs": 15127.4,
+         "endMs": 15443.2
+        },
+        {
+         "text": "เงิน",
+         "charStart": 9,
+         "charEnd": 13,
+         "startMs": 15482.6,
+         "endMs": 15640.5
+        },
+        {
+         "text": "หาย",
+         "charStart": 13,
+         "charEnd": 16,
+         "startMs": 15640.5,
+         "endMs": 15864.2
+        },
+        {
+         "text": "ไป",
+         "charStart": 16,
+         "charEnd": 18,
+         "startMs": 15916.8,
+         "endMs": 16009.0
+        },
+        {
+         "text": "กับ",
+         "charStart": 18,
+         "charEnd": 21,
+         "startMs": 16048.4,
+         "endMs": 16206.3
+        },
+        {
+         "text": "เรื่อง",
+         "charStart": 21,
+         "charEnd": 27,
+         "startMs": 16219.5,
+         "endMs": 16377.3
+        },
+        {
+         "text": "ที่",
+         "charStart": 27,
+         "charEnd": 30,
+         "startMs": 16390.5,
+         "endMs": 16495.8
+        },
+        {
+         "text": "ผม",
+         "charStart": 30,
+         "charEnd": 32,
+         "startMs": 16535.2,
+         "endMs": 16693.1
+        },
+        {
+         "text": "ไม่",
+         "charStart": 32,
+         "charEnd": 35,
+         "startMs": 16693.2,
+         "endMs": 16824.7
+        },
+        {
+         "text": "ได้",
+         "charStart": 35,
+         "charEnd": 38,
+         "startMs": 16837.9,
+         "endMs": 16930.0
+        },
+        {
+         "text": "ตั้งใจ",
+         "charStart": 38,
+         "charEnd": 44,
+         "startMs": 16982.6,
+         "endMs": 17337.9
+        },
+        {
+         "text": "จะ",
+         "charStart": 44,
+         "charEnd": 46,
+         "startMs": 17364.2,
+         "endMs": 17495.8
+        },
+        {
+         "text": "จ่าย",
+         "charStart": 46,
+         "charEnd": 50,
+         "startMs": 17495.8,
+         "endMs": 17693.2
+        },
+        {
+         "text": "เลย",
+         "charStart": 50,
+         "charEnd": 53,
+         "startMs": 17693.2,
+         "endMs": 18048.4
+        }
+       ]
+      },
+      {
+       "text": "ปัญหาไม่ใช่รายได้ ปัญหาคือเราไม่รู้ว่าเงินไปไหน",
+       "startMs": 18358.4,
+       "endMs": 21568.4,
+       "pauseBeforeMs": 140,
+       "tokens": [
+        {
+         "text": "ปัญหา",
+         "charStart": 0,
+         "charEnd": 5,
+         "startMs": 18398.4,
+         "endMs": 18766.8
+        },
+        {
+         "text": "ไม่",
+         "charStart": 5,
+         "charEnd": 8,
+         "startMs": 18780.0,
+         "endMs": 18898.4
+        },
+        {
+         "text": "ใช่",
+         "charStart": 8,
+         "charEnd": 11,
+         "startMs": 18898.4,
+         "endMs": 19082.6
+        },
+        {
+         "text": "ราย",
+         "charStart": 11,
+         "charEnd": 14,
+         "startMs": 19082.6,
+         "endMs": 19280.0
+        },
+        {
+         "text": "ได้",
+         "charStart": 14,
+         "charEnd": 17,
+         "startMs": 19319.4,
+         "endMs": 19411.6
+        },
+        {
+         "text": "ปัญหา",
+         "charStart": 18,
+         "charEnd": 23,
+         "startMs": 19451.0,
+         "endMs": 19727.4
+        },
+        {
+         "text": "คือ",
+         "charStart": 23,
+         "charEnd": 26,
+         "startMs": 19766.8,
+         "endMs": 19951.0
+        },
+        {
+         "text": "เรา",
+         "charStart": 26,
+         "charEnd": 29,
+         "startMs": 19951.0,
+         "endMs": 20187.9
+        },
+        {
+         "text": "ไม่",
+         "charStart": 29,
+         "charEnd": 32,
+         "startMs": 20201.0,
+         "endMs": 20345.8
+        },
+        {
+         "text": "รู้",
+         "charStart": 32,
+         "charEnd": 35,
+         "startMs": 20358.9,
+         "endMs": 20490.5
+        },
+        {
+         "text": "ว่า",
+         "charStart": 35,
+         "charEnd": 38,
+         "startMs": 20503.6,
+         "endMs": 20661.5
+        },
+        {
+         "text": "เงิน",
+         "charStart": 38,
+         "charEnd": 42,
+         "startMs": 20701.0,
+         "endMs": 20872.1
+        },
+        {
+         "text": "ไป",
+         "charStart": 42,
+         "charEnd": 44,
+         "startMs": 20885.2,
+         "endMs": 20990.5
+        },
+        {
+         "text": "ไหน",
+         "charStart": 44,
+         "charEnd": 47,
+         "startMs": 21016.8,
+         "endMs": 21398.4
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "tools",
+   "startMs": 21868.4,
+   "endMs": 42757.8,
+   "beats": [
+    {
+     "startMs": 22068.4,
+     "endMs": 29391.5,
+     "chunks": [
+      {
+       "text": "ผมเริ่มจาก 3 อย่าง",
+       "startMs": 22068.4,
+       "endMs": 23528.4,
+       "pauseBeforeMs": 0,
+       "tokens": [
+        {
+         "text": "ผม",
+         "charStart": 0,
+         "charEnd": 2,
+         "startMs": 22108.4,
+         "endMs": 22371.5
+        },
+        {
+         "text": "เริ่ม",
+         "charStart": 2,
+         "charEnd": 7,
+         "startMs": 22384.7,
+         "endMs": 22608.4
+        },
+        {
+         "text": "จาก",
+         "charStart": 7,
+         "charEnd": 10,
+         "startMs": 22634.7,
+         "endMs": 22792.6
+        },
+        {
+         "text": "3",
+         "charStart": 11,
+         "charEnd": 12,
+         "startMs": 22792.6,
+         "endMs": 23042.6
+        },
+        {
+         "text": "อย่าง",
+         "charStart": 13,
+         "charEnd": 18,
+         "startMs": 23082.1,
+         "endMs": 23358.4
+        }
+       ]
+      },
+      {
+       "text": "หนึ่ง จดรายจ่าย ตอนนี้มีตัวช่วยใน LINE อย่างเหมียวจดหรือป้านวล ใช้แบบแชทได้เลย ไม่ต้องลงแอปเพิ่ม",
+       "startMs": 23668.4,
+       "endMs": 29391.5,
+       "pauseBeforeMs": 140,
+       "tokens": [
+        {
+         "text": "หนึ่ง",
+         "charStart": 0,
+         "charEnd": 5,
+         "startMs": 23708.4,
+         "endMs": 23971.6
+        },
+        {
+         "text": "จด",
+         "charStart": 6,
+         "charEnd": 8,
+         "startMs": 23984.7,
+         "endMs": 24142.6
+        },
+        {
+         "text": "ราย",
+         "charStart": 8,
+         "charEnd": 11,
+         "startMs": 24168.9,
+         "endMs": 24340.0
+        },
+        {
+         "text": "จ่าย",
+         "charStart": 11,
+         "charEnd": 15,
+         "startMs": 24379.4,
+         "endMs": 24563.6
+        },
+        {
+         "text": "ตอน",
+         "charStart": 16,
+         "charEnd": 19,
+         "startMs": 24616.3,
+         "endMs": 24774.2
+        },
+        {
+         "text": "นี้",
+         "charStart": 19,
+         "charEnd": 22,
+         "startMs": 24787.4,
+         "endMs": 24932.1
+        },
+        {
+         "text": "มี",
+         "charStart": 22,
+         "charEnd": 24,
+         "startMs": 24958.4,
+         "endMs": 25076.8
+        },
+        {
+         "text": "ตัว",
+         "charStart": 24,
+         "charEnd": 27,
+         "startMs": 25129.4,
+         "endMs": 25261.0
+        },
+        {
+         "text": "ช่วย",
+         "charStart": 27,
+         "charEnd": 31,
+         "startMs": 25300.5,
+         "endMs": 25524.2
+        },
+        {
+         "text": "ใน",
+         "charStart": 31,
+         "charEnd": 33,
+         "startMs": 25550.5,
+         "endMs": 25655.8
+        },
+        {
+         "text": "LINE",
+         "charStart": 34,
+         "charEnd": 38,
+         "startMs": 25668.9,
+         "endMs": 25840.0
+        },
+        {
+         "text": "อย่าง",
+         "charStart": 39,
+         "charEnd": 44,
+         "startMs": 25879.4,
+         "endMs": 26050.5
+        },
+        {
+         "text": "เหมียว",
+         "charStart": 44,
+         "charEnd": 50,
+         "startMs": 26050.5,
+         "endMs": 26353.1
+        },
+        {
+         "text": "จด",
+         "charStart": 50,
+         "charEnd": 52,
+         "startMs": 26445.2,
+         "endMs": 26616.3
+        },
+        {
+         "text": "หรือ",
+         "charStart": 52,
+         "charEnd": 56,
+         "startMs": 26616.3,
+         "endMs": 26761.1
+        },
+        {
+         "text": "ป้านวล",
+         "charStart": 56,
+         "charEnd": 62,
+         "startMs": 26800.5,
+         "endMs": 27234.7
+        },
+        {
+         "text": "ใช้",
+         "charStart": 63,
+         "charEnd": 66,
+         "startMs": 27247.9,
+         "endMs": 27405.8
+        },
+        {
+         "text": "แบบ",
+         "charStart": 66,
+         "charEnd": 69,
+         "startMs": 27445.2,
+         "endMs": 27629.4
+        },
+        {
+         "text": "แชท",
+         "charStart": 69,
+         "charEnd": 72,
+         "startMs": 27655.8,
+         "endMs": 27905.8
+        },
+        {
+         "text": "ได้",
+         "charStart": 72,
+         "charEnd": 75,
+         "startMs": 27945.2,
+         "endMs": 28037.4
+        },
+        {
+         "text": "เลย",
+         "charStart": 75,
+         "charEnd": 78,
+         "startMs": 28037.4,
+         "endMs": 28208.4
+        },
+        {
+         "text": "ไม่",
+         "charStart": 79,
+         "charEnd": 82,
+         "startMs": 28234.7,
+         "endMs": 28326.9
+        },
+        {
+         "text": "ต้อง",
+         "charStart": 82,
+         "charEnd": 86,
+         "startMs": 28379.4,
+         "endMs": 28511.0
+        },
+        {
+         "text": "ลง",
+         "charStart": 86,
+         "charEnd": 88,
+         "startMs": 28511.0,
+         "endMs": 28655.8
+        },
+        {
+         "text": "แอป",
+         "charStart": 88,
+         "charEnd": 91,
+         "startMs": 28668.9,
+         "endMs": 28840.0
+        },
+        {
+         "text": "เพิ่ม",
+         "charStart": 91,
+         "charEnd": 96,
+         "startMs": 28866.3,
+         "endMs": 29221.6
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "startMs": 29651.5,
+     "endMs": 35493.1,
+     "chunks": [
+      {
+       "text": "สอง แยกบัญชี บัญชีใช้จ่าย บัญชีเก็บ บัญชีฉุกเฉิน แล้วตั้งโอนอัตโนมัติทุกวันที่เงินเข้า",
+       "startMs": 29651.5,
+       "endMs": 35493.1,
+       "pauseBeforeMs": 0,
+       "tokens": [
+        {
+         "text": "สอง",
+         "charStart": 0,
+         "charEnd": 3,
+         "startMs": 29691.5,
+         "endMs": 30007.3
+        },
+        {
+         "text": "แยก",
+         "charStart": 4,
+         "charEnd": 7,
+         "startMs": 30033.7,
+         "endMs": 30204.7
+        },
+        {
+         "text": "บัญชี",
+         "charStart": 7,
+         "charEnd": 12,
+         "startMs": 30257.3,
+         "endMs": 30520.5
+        },
+        {
+         "text": "บัญชี",
+         "charStart": 13,
+         "charEnd": 18,
+         "startMs": 30560.0,
+         "endMs": 30888.9
+        },
+        {
+         "text": "ใช้จ่าย",
+         "charStart": 18,
+         "charEnd": 25,
+         "startMs": 30915.2,
+         "endMs": 31244.2
+        },
+        {
+         "text": "บัญชี",
+         "charStart": 26,
+         "charEnd": 31,
+         "startMs": 31270.5,
+         "endMs": 31573.1
+        },
+        {
+         "text": "เก็บ",
+         "charStart": 31,
+         "charEnd": 35,
+         "startMs": 31625.7,
+         "endMs": 31783.6
+        },
+        {
+         "text": "บัญชี",
+         "charStart": 36,
+         "charEnd": 41,
+         "startMs": 31796.8,
+         "endMs": 32073.1
+        },
+        {
+         "text": "ฉุกเฉิน",
+         "charStart": 41,
+         "charEnd": 48,
+         "startMs": 32099.5,
+         "endMs": 32520.5
+        },
+        {
+         "text": "แล้ว",
+         "charStart": 49,
+         "charEnd": 53,
+         "startMs": 32520.5,
+         "endMs": 32928.4
+        },
+        {
+         "text": "ตั้ง",
+         "charStart": 53,
+         "charEnd": 57,
+         "startMs": 33402.1,
+         "endMs": 33573.1
+        },
+        {
+         "text": "โอน",
+         "charStart": 57,
+         "charEnd": 60,
+         "startMs": 33586.3,
+         "endMs": 33770.5
+        },
+        {
+         "text": "อัตโนมัติ",
+         "charStart": 60,
+         "charEnd": 69,
+         "startMs": 33770.5,
+         "endMs": 34257.3
+        },
+        {
+         "text": "ทุก",
+         "charStart": 69,
+         "charEnd": 72,
+         "startMs": 34296.8,
+         "endMs": 34428.4
+        },
+        {
+         "text": "วัน",
+         "charStart": 72,
+         "charEnd": 75,
+         "startMs": 34441.5,
+         "endMs": 34612.6
+        },
+        {
+         "text": "ที่",
+         "charStart": 75,
+         "charEnd": 78,
+         "startMs": 34625.7,
+         "endMs": 34717.9
+        },
+        {
+         "text": "เงิน",
+         "charStart": 78,
+         "charEnd": 82,
+         "startMs": 34770.5,
+         "endMs": 34954.7
+        },
+        {
+         "text": "เข้า",
+         "charStart": 82,
+         "charEnd": 86,
+         "startMs": 34967.9,
+         "endMs": 35323.1
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "startMs": 35753.1,
+     "endMs": 42457.8,
+     "chunks": [
+      {
+       "text": "สาม ให้เงินทำงาน ลงทุนเท่ากันทุกเดือน เริ่มจากเงินน้อยๆ ก็ได้",
+       "startMs": 35753.1,
+       "endMs": 40134.2,
+       "pauseBeforeMs": 0,
+       "tokens": [
+        {
+         "text": "สาม",
+         "charStart": 0,
+         "charEnd": 3,
+         "startMs": 35793.1,
+         "endMs": 36108.9
+        },
+        {
+         "text": "ให้",
+         "charStart": 4,
+         "charEnd": 7,
+         "startMs": 36108.9,
+         "endMs": 36214.1
+        },
+        {
+         "text": "เงิน",
+         "charStart": 7,
+         "charEnd": 11,
+         "startMs": 36266.8,
+         "endMs": 36411.6
+        },
+        {
+         "text": "ทำ",
+         "charStart": 11,
+         "charEnd": 13,
+         "startMs": 36424.7,
+         "endMs": 36595.7
+        },
+        {
+         "text": "งาน",
+         "charStart": 13,
+         "charEnd": 16,
+         "startMs": 36635.2,
+         "endMs": 36779.9
+        },
+        {
+         "text": "ลง",
+         "charStart": 17,
+         "charEnd": 19,
+         "startMs": 36779.9,
+         "endMs": 36964.1
+        },
+        {
+         "text": "ทุน",
+         "charStart": 19,
+         "charEnd": 22,
+         "startMs": 37003.6,
+         "endMs": 37174.7
+        },
+        {
+         "text": "เท่า",
+         "charStart": 22,
+         "charEnd": 26,
+         "startMs": 37201.0,
+         "endMs": 37345.8
+        },
+        {
+         "text": "กัน",
+         "charStart": 26,
+         "charEnd": 29,
+         "startMs": 37372.1,
+         "endMs": 37529.9
+        },
+        {
+         "text": "ทุก",
+         "charStart": 29,
+         "charEnd": 32,
+         "startMs": 37529.9,
+         "endMs": 37674.7
+        },
+        {
+         "text": "เดือน",
+         "charStart": 32,
+         "charEnd": 37,
+         "startMs": 37727.3,
+         "endMs": 38358.9
+        },
+        {
+         "text": "เริ่ม",
+         "charStart": 38,
+         "charEnd": 43,
+         "startMs": 38424.7,
+         "endMs": 38674.7
+        },
+        {
+         "text": "จาก",
+         "charStart": 43,
+         "charEnd": 46,
+         "startMs": 38687.9,
+         "endMs": 38885.2
+        },
+        {
+         "text": "เงิน",
+         "charStart": 46,
+         "charEnd": 50,
+         "startMs": 38898.4,
+         "endMs": 39043.1
+        },
+        {
+         "text": "น้อยๆ",
+         "charStart": 50,
+         "charEnd": 55,
+         "startMs": 39043.1,
+         "endMs": 39451.0
+        },
+        {
+         "text": "ก็",
+         "charStart": 56,
+         "charEnd": 58,
+         "startMs": 39451.0,
+         "endMs": 39608.9
+        },
+        {
+         "text": "ได้",
+         "charStart": 58,
+         "charEnd": 61,
+         "startMs": 39635.2,
+         "endMs": 39964.2
+        }
+       ]
+      },
+      {
+       "text": "เพราะสิ่งที่ช่วยเราที่สุดคือเวลา",
+       "startMs": 40274.2,
+       "endMs": 42457.8,
+       "pauseBeforeMs": 140,
+       "tokens": [
+        {
+         "text": "เพราะ",
+         "charStart": 0,
+         "charEnd": 5,
+         "startMs": 40314.2,
+         "endMs": 40511.5
+        },
+        {
+         "text": "สิ่ง",
+         "charStart": 5,
+         "charEnd": 9,
+         "startMs": 40524.7,
+         "endMs": 40748.4
+        },
+        {
+         "text": "ที่",
+         "charStart": 9,
+         "charEnd": 12,
+         "startMs": 40787.9,
+         "endMs": 40880.0
+        },
+        {
+         "text": "ช่วย",
+         "charStart": 12,
+         "charEnd": 16,
+         "startMs": 40906.3,
+         "endMs": 41116.8
+        },
+        {
+         "text": "เรา",
+         "charStart": 16,
+         "charEnd": 19,
+         "startMs": 41116.8,
+         "endMs": 41261.5
+        },
+        {
+         "text": "ที่สุด",
+         "charStart": 19,
+         "charEnd": 25,
+         "startMs": 41301.0,
+         "endMs": 41590.5
+        },
+        {
+         "text": "คือ",
+         "charStart": 25,
+         "charEnd": 28,
+         "startMs": 41630.0,
+         "endMs": 41787.8
+        },
+        {
+         "text": "เวลา",
+         "charStart": 28,
+         "charEnd": 32,
+         "startMs": 41814.2,
+         "endMs": 42287.8
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "payoff",
+   "startMs": 42757.8,
+   "endMs": 50351.5,
+   "beats": [
+    {
+     "startMs": 43007.8,
+     "endMs": 50001.5,
+     "chunks": [
+      {
+       "text": "อิสรภาพทางการเงินไม่ได้แปลว่าต้องรวยล้นฟ้า",
+       "startMs": 43007.8,
+       "endMs": 46244.1,
+       "pauseBeforeMs": 0,
+       "tokens": [
+        {
+         "text": "อิสรภาพ",
+         "charStart": 0,
+         "charEnd": 7,
+         "startMs": 43047.8,
+         "endMs": 43600.4
+        },
+        {
+         "text": "ทาง",
+         "charStart": 7,
+         "charEnd": 10,
+         "startMs": 43639.9,
+         "endMs": 43824.1
+        },
+        {
+         "text": "การ",
+         "charStart": 10,
+         "charEnd": 13,
+         "startMs": 43824.1,
+         "endMs": 44021.5
+        },
+        {
+         "text": "เงิน",
+         "charStart": 13,
+         "charEnd": 17,
+         "startMs": 44074.1,
+         "endMs": 44245.2
+        },
+        {
+         "text": "ไม่",
+         "charStart": 17,
+         "charEnd": 20,
+         "startMs": 44245.2,
+         "endMs": 44350.4
+        },
+        {
+         "text": "ได้",
+         "charStart": 20,
+         "charEnd": 23,
+         "startMs": 44376.8,
+         "endMs": 44495.2
+        },
+        {
+         "text": "แปล",
+         "charStart": 23,
+         "charEnd": 26,
+         "startMs": 44534.6,
+         "endMs": 44692.5
+        },
+        {
+         "text": "ว่า",
+         "charStart": 26,
+         "charEnd": 29,
+         "startMs": 44732.0,
+         "endMs": 45047.8
+        },
+        {
+         "text": "ต้อง",
+         "charStart": 29,
+         "charEnd": 33,
+         "startMs": 45218.9,
+         "endMs": 45350.4
+        },
+        {
+         "text": "รวย",
+         "charStart": 33,
+         "charEnd": 36,
+         "startMs": 45363.6,
+         "endMs": 45521.5
+        },
+        {
+         "text": "ล้นฟ้า",
+         "charStart": 36,
+         "charEnd": 42,
+         "startMs": 45534.6,
+         "endMs": 46074.1
+        }
+       ]
+      },
+      {
+       "text": "มันคือวันที่คุณได้ทำงานเพราะอยากทำ ไม่ใช่เพราะต้องทำ",
+       "startMs": 46594.1,
+       "endMs": 50001.5,
+       "pauseBeforeMs": 350,
+       "tokens": [
+        {
+         "text": "มัน",
+         "charStart": 0,
+         "charEnd": 3,
+         "startMs": 46634.1,
+         "endMs": 46844.6
+        },
+        {
+         "text": "คือ",
+         "charStart": 3,
+         "charEnd": 6,
+         "startMs": 46870.9,
+         "endMs": 47028.8
+        },
+        {
+         "text": "วัน",
+         "charStart": 6,
+         "charEnd": 9,
+         "startMs": 47068.3,
+         "endMs": 47213.0
+        },
+        {
+         "text": "ที่",
+         "charStart": 9,
+         "charEnd": 12,
+         "startMs": 47226.2,
+         "endMs": 47344.6
+        },
+        {
+         "text": "คุณ",
+         "charStart": 12,
+         "charEnd": 15,
+         "startMs": 47370.9,
+         "endMs": 47555.1
+        },
+        {
+         "text": "ได้",
+         "charStart": 15,
+         "charEnd": 18,
+         "startMs": 47555.1,
+         "endMs": 47634.1
+        },
+        {
+         "text": "ทำ",
+         "charStart": 18,
+         "charEnd": 20,
+         "startMs": 47673.6,
+         "endMs": 47831.5
+        },
+        {
+         "text": "งาน",
+         "charStart": 20,
+         "charEnd": 23,
+         "startMs": 47870.9,
+         "endMs": 48107.7
+        },
+        {
+         "text": "เพราะ",
+         "charStart": 23,
+         "charEnd": 28,
+         "startMs": 48147.2,
+         "endMs": 48265.7
+        },
+        {
+         "text": "อยาก",
+         "charStart": 28,
+         "charEnd": 32,
+         "startMs": 48305.1,
+         "endMs": 48463.0
+        },
+        {
+         "text": "ทำ",
+         "charStart": 32,
+         "charEnd": 34,
+         "startMs": 48515.7,
+         "endMs": 48726.2
+        },
+        {
+         "text": "ไม่",
+         "charStart": 35,
+         "charEnd": 38,
+         "startMs": 48726.2,
+         "endMs": 48844.6
+        },
+        {
+         "text": "ใช่",
+         "charStart": 38,
+         "charEnd": 41,
+         "startMs": 48844.6,
+         "endMs": 49068.3
+        },
+        {
+         "text": "เพราะ",
+         "charStart": 41,
+         "charEnd": 46,
+         "startMs": 49134.1,
+         "endMs": 49278.8
+        },
+        {
+         "text": "ต้อง",
+         "charStart": 46,
+         "charEnd": 50,
+         "startMs": 49331.5,
+         "endMs": 49463.0
+        },
+        {
+         "text": "ทำ",
+         "charStart": 50,
+         "charEnd": 52,
+         "startMs": 49489.3,
+         "endMs": 49831.5
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cta",
+   "startMs": 50351.5,
+   "endMs": 59564.1,
+   "beats": [
+    {
+     "startMs": 50551.5,
+     "endMs": 57764.1,
+     "chunks": [
+      {
+       "text": "ไม่ต้องรอให้รายได้เพิ่มนะ",
+       "startMs": 50551.5,
+       "endMs": 52235.1,
+       "pauseBeforeMs": 0,
+       "tokens": [
+        {
+         "text": "ไม่",
+         "charStart": 0,
+         "charEnd": 3,
+         "startMs": 50591.5,
+         "endMs": 50762.5
+        },
+        {
+         "text": "ต้อง",
+         "charStart": 3,
+         "charEnd": 7,
+         "startMs": 50802.0,
+         "endMs": 50959.9
+        },
+        {
+         "text": "รอ",
+         "charStart": 7,
+         "charEnd": 9,
+         "startMs": 50973.0,
+         "endMs": 51144.1
+        },
+        {
+         "text": "ให้",
+         "charStart": 9,
+         "charEnd": 12,
+         "startMs": 51144.1,
+         "endMs": 51262.5
+        },
+        {
+         "text": "ราย",
+         "charStart": 12,
+         "charEnd": 15,
+         "startMs": 51275.7,
+         "endMs": 51446.7
+        },
+        {
+         "text": "ได้",
+         "charStart": 15,
+         "charEnd": 18,
+         "startMs": 51473.0,
+         "endMs": 51578.3
+        },
+        {
+         "text": "เพิ่ม",
+         "charStart": 18,
+         "charEnd": 23,
+         "startMs": 51604.6,
+         "endMs": 51815.2
+        },
+        {
+         "text": "นะ",
+         "charStart": 23,
+         "charEnd": 25,
+         "startMs": 51815.2,
+         "endMs": 52065.2
+        }
+       ]
+      },
+      {
+       "text": "วันนี้ลองจดรายจ่ายแค่รายการเดียวก่อน",
+       "startMs": 52375.1,
+       "endMs": 54953.6,
+       "pauseBeforeMs": 140,
+       "tokens": [
+        {
+         "text": "วันนี้",
+         "charStart": 0,
+         "charEnd": 6,
+         "startMs": 52415.1,
+         "endMs": 52770.4
+        },
+        {
+         "text": "ลอง",
+         "charStart": 6,
+         "charEnd": 9,
+         "startMs": 52783.6,
+         "endMs": 52994.1
+        },
+        {
+         "text": "จด",
+         "charStart": 9,
+         "charEnd": 11,
+         "startMs": 53033.6,
+         "endMs": 53191.4
+        },
+        {
+         "text": "ราย",
+         "charStart": 11,
+         "charEnd": 14,
+         "startMs": 53217.8,
+         "endMs": 53402.0
+        },
+        {
+         "text": "จ่าย",
+         "charStart": 14,
+         "charEnd": 18,
+         "startMs": 53441.5,
+         "endMs": 53652.0
+        },
+        {
+         "text": "แค่",
+         "charStart": 18,
+         "charEnd": 21,
+         "startMs": 53665.1,
+         "endMs": 53862.5
+        },
+        {
+         "text": "รายการ",
+         "charStart": 21,
+         "charEnd": 27,
+         "startMs": 53862.5,
+         "endMs": 54244.1
+        },
+        {
+         "text": "เดียว",
+         "charStart": 27,
+         "charEnd": 32,
+         "startMs": 54257.3,
+         "endMs": 54441.5
+        },
+        {
+         "text": "ก่อน",
+         "charStart": 32,
+         "charEnd": 36,
+         "startMs": 54454.6,
+         "endMs": 54783.6
+        }
+       ]
+      },
+      {
+       "text": "แล้วคอมเมนต์มาว่าคุณใช้ตัวช่วยอะไรอยู่",
+       "startMs": 55093.6,
+       "endMs": 57764.1,
+       "pauseBeforeMs": 140,
+       "tokens": [
+        {
+         "text": "แล้ว",
+         "charStart": 0,
+         "charEnd": 4,
+         "startMs": 55133.6,
+         "endMs": 55396.7
+        },
+        {
+         "text": "คอมเมนต์",
+         "charStart": 4,
+         "charEnd": 12,
+         "startMs": 55396.7,
+         "endMs": 55844.1
+        },
+        {
+         "text": "มา",
+         "charStart": 12,
+         "charEnd": 14,
+         "startMs": 55857.3,
+         "endMs": 55975.7
+        },
+        {
+         "text": "ว่า",
+         "charStart": 14,
+         "charEnd": 17,
+         "startMs": 56015.2,
+         "endMs": 56252.0
+        },
+        {
+         "text": "คุณ",
+         "charStart": 17,
+         "charEnd": 20,
+         "startMs": 56304.6,
+         "endMs": 56462.5
+        },
+        {
+         "text": "ใช้",
+         "charStart": 20,
+         "charEnd": 23,
+         "startMs": 56475.7,
+         "endMs": 56646.7
+        },
+        {
+         "text": "ตัว",
+         "charStart": 23,
+         "charEnd": 26,
+         "startMs": 56699.4,
+         "endMs": 56817.8
+        },
+        {
+         "text": "ช่วย",
+         "charStart": 26,
+         "charEnd": 30,
+         "startMs": 56857.3,
+         "endMs": 57041.5
+        },
+        {
+         "text": "อะไร",
+         "charStart": 30,
+         "charEnd": 34,
+         "startMs": 57041.5,
+         "endMs": 57278.3
+        },
+        {
+         "text": "อยู่",
+         "charStart": 34,
+         "charEnd": 38,
+         "startMs": 57331.0,
+         "endMs": 57594.1
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
